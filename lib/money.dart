@@ -1,13 +1,14 @@
+import 'package:flutter/material.dart';
+import 'package:money/src/money_service.dart';
+import 'package:money/src/money_style.dart';
 
-import 'dart:async';
-
-import 'package:flutter/services.dart';
 
 class Money {
-  static const MethodChannel _channel = MethodChannel('money');
+  late final MoneyService _service;
 
-  static Future<String?> get platformVersion async {
-    final String? version = await _channel.invokeMethod('getPlatformVersion');
-    return version;
-  }
+  Money({MoneyStyle? style})
+      : _service = MoneyService(style: style ?? MoneyStyle());
+
+  Widget home() => _service.presenter.home();
+
 }
