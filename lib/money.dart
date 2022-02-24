@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:money/src/money_service.dart';
 import 'package:money/src/money_style.dart';
 
-
 class Money {
   late final MoneyService _service;
 
