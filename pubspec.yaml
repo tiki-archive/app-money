@@ -31,3 +31,5 @@ flutter:
         pluginClass: MoneyPlugin
       ios:
         pluginClass: MoneyPlugin
+  assets:
+    - res/images/
