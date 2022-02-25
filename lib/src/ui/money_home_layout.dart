@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:money/src/ui/money_home_view_header.dart';
 
 class MoneyHomeLayout extends StatelessWidget{
 
@@ -7,7 +8,7 @@ class MoneyHomeLayout extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text("MoneyHome")
+      child: MoneyHomeViewHeader()
     );
   }
 
