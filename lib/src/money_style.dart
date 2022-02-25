@@ -3,17 +3,19 @@ import 'package:flutter/material.dart';
 import 'utils/money_utils_style.dart';
 
 class MoneyStyle extends MoneyUtilsStyle {
-  final Color _headerColor;
+  final Color _textColor;
   final String _headerFontFamily;
 
   MoneyStyle({
-    headerColor = const Color(0xFF00133F),
+    textColor = const Color(0xFF00133F),
     headerFontFamily = "Arial"
   }) :
-   _headerColor = headerColor,
+   _textColor = textColor,
    _headerFontFamily = headerFontFamily;
 
-  get headerColor => _headerColor;
+  get headerColor => _textColor;
 
   get headerFontFamily => _headerFontFamily;
+
+  get textColor => _textColor;
 }

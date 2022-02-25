@@ -13,12 +13,12 @@ extension MoneyModelTransactionTypeExt on MoneyModelTransactionType{
     return name[0].toUpperCase() + name.substring(1);
   }
 
-  IconData get icon {
+  String get icon {
     switch(this){
       case MoneyModelTransactionType.subject:
-        return Icons.mail_outlined;
+        return "mail";
       case MoneyModelTransactionType.zipcode:
-        return Icons.location_on;
+        return "location";
     }
   }
 }
