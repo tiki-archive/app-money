@@ -9,9 +9,11 @@ class MoneyPresenter {
 
   MoneyPresenter(this.service);
 
-  ChangeNotifierProvider<MoneyService> home() {
+  ChangeNotifierProvider<MoneyService> home({bool example = false}) {
     return ChangeNotifierProvider.value(
-        value: service, child: const MoneyHomeLayout());
+        value: service,
+        child: MoneyHomeLayout(example: example)
+    );
   }
 
   void openDetail(MoneyModelTransaction transaction) {}

@@ -14,10 +14,10 @@ class MoneyHomeViewListTransaction extends StatelessWidget{
   Widget build(BuildContext context) {
     MoneyService service = Provider.of<MoneyService>(context);
     return GestureDetector(
-      child: Row(
+      child: Padding( padding: EdgeInsets.symmetric(vertical: service.style.size(10)), child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-      Padding(padding:EdgeInsets.only(right: service.style.size(7), left: service.style.size(15)), child:
+      SizedBox(width: service.style.size(60), height: service.style.size(30), child:
             Image.asset("res/images/${transaction.type.icon}.png", height: service.style.size(23), package: "money")
       ),
           Expanded(child:
@@ -42,7 +42,7 @@ class MoneyHomeViewListTransaction extends StatelessWidget{
               Padding(padding:EdgeInsets.only(right: service.style.size(7)), child: Text("${transaction.ammount} ${transaction.unit}",
               style: TextStyle(fontSize: service.style.text(18)))),
         ],
-      ),
+      )),
       onTap: service.controller.openDetail(transaction),
     );
   }

@@ -8,6 +8,6 @@ class Money {
   Money({MoneyStyle? style})
       : _service = MoneyService(style: style ?? MoneyStyle());
 
-  Widget home() => _service.presenter.home();
+  Widget home({bool example = false}) => _service.presenter.home(example: example);
 
 }

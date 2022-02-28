@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Money example app'),
         ),
-        body: Money().home()
+        body: Money().home(example: true)
         )
     );
   }
