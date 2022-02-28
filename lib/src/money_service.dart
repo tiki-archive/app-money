@@ -8,7 +8,7 @@ import 'money_style.dart';
 
 class MoneyService extends ChangeNotifier {
   final Logger _log = Logger('MoneyService');
-  
+
   late final MoneyModel model;
   late final MoneyPresenter presenter;
   late final MoneyController controller;
