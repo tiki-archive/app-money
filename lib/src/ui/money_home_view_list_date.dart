@@ -6,19 +6,28 @@ class MoneyHomeViewListDate extends StatelessWidget {
   final MoneyModelTransaction current;
   final MoneyModelTransaction? last;
 
-  const MoneyHomeViewListDate({Key? key, required this.current, this.last}) : super(key: key);
+  const MoneyHomeViewListDate({Key? key, required this.current, this.last})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return last == null ?
-    Container(padding: const EdgeInsets.only(left: 10, top:10),width:double.infinity, child: Text(_getDateString(current.minted).toUpperCase())) :
-        current.minted.day != last!.minted.day ?
-        Container(padding: const EdgeInsets.only(left: 10, top:10),width:double.infinity, child: Text(_getDateString(current.minted).toUpperCase(), textAlign: TextAlign.start)) : Container();
+    return last == null
+        ? Container(
+            padding: const EdgeInsets.only(left: 10, top: 10),
+            width: double.infinity,
+            child: Text(_getDateString(current.minted).toUpperCase()))
+        : current.minted.day != last!.minted.day
+            ? Container(
+                padding: const EdgeInsets.only(left: 10, top: 10),
+                width: double.infinity,
+                child: Text(_getDateString(current.minted).toUpperCase(),
+                    textAlign: TextAlign.start))
+            : Container();
   }
 
   String _getDateString(DateTime date) {
-    if(_isToday(date)) return 'Today';
-    if(_isYesterday(date)) return 'Yesterday';
+    if (_isToday(date)) return 'Today';
+    if (_isYesterday(date)) return 'Yesterday';
     return DateFormat('EEEE, d MMM').format(date);
   }
 
@@ -42,4 +51,5 @@ class MoneyHomeViewListDate extends StatelessWidget {
       milliseconds: now.millisecond,
       microseconds: now.microsecond,
     )));
-  }}
+  }
+}

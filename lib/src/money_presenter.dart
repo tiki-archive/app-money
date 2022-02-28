@@ -1,4 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:money/src/model/money_model_transaction.dart';
+import 'package:money/src/ui/money_detail_layout.dart';
 import 'package:provider/provider.dart';
 
 import '../../src/money_service.dart';
@@ -11,11 +13,21 @@ class MoneyPresenter {
 
   ChangeNotifierProvider<MoneyService> home({bool example = false}) {
     return ChangeNotifierProvider.value(
-        value: service,
-        child: MoneyHomeLayout(example: example)
-    );
+        value: service, child: MoneyHomeLayout(example: example));
   }
 
-  void openDetail(MoneyModelTransaction transaction) {}
-
+  Future<void> openDetail(
+      BuildContext context, MoneyModelTransaction transaction) {
+    return showModalBottomSheet<void>(
+        context: context,
+        isScrollControlled: true,
+        isDismissible: true,
+        backgroundColor: service.style.modalNavColor,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+                top: Radius.circular(service.style.size(36)))),
+        builder: (BuildContext context) => ChangeNotifierProvider.value(
+            value: service,
+            child: MoneyDetailLayout(transaction: transaction)));
+  }
 }
