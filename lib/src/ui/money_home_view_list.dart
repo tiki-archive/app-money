@@ -9,39 +9,39 @@ import 'money_home_view_list_transaction.dart';
 class MoneyHomeViewList extends StatelessWidget {
 
   final bool example;
-
+  final List<MoneyModelTransaction> transactions;
   final ScrollController scrollController;
+  final Function? onRefresh;
 
-  const MoneyHomeViewList({Key? key, this.example = false, required this.scrollController})
+  const MoneyHomeViewList({Key? key, this.onRefresh, this.example = false, required this.scrollController, required this.transactions})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    MoneyService service = Provider.of<MoneyService>(context);
-    List<MoneyModelTransaction> list = example ? service.generateList() : service.model.transactions;
-    return Expanded(
-        child: Opacity(
+    return Opacity(
             opacity: example ? 0.5 : 1,
             child: Stack(children: [
-              SizedBox(
-                  height: double.infinity,
+              Align(
                   child: Image.asset(
                     'res/images/EXAMPLE.png',
                     package: 'money',
                     repeat: ImageRepeat.noRepeat,
                     alignment: Alignment.center,
                   )),
-              ListView.builder(
+              SizedBox(
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                  child: ListView.builder(
                   controller: scrollController,
-                  itemCount: list.length,
+                  itemCount: transactions.length,
                   itemBuilder: (context, index) {
                     return Column(children: [
                       MoneyHomeViewListDate(
-                          current: list[index],
-                          last: index > 0 ? list[index - 1] : null),
-                      MoneyHomeViewListTransaction(transaction: list[index])
+                          current: transactions[index],
+                          last: index > 0 ? transactions[index - 1] : null),
+                      MoneyHomeViewListTransaction(transaction: transactions[index])
                     ]);
-                  })
-            ])));
+                  }))
+            ]));
   }
 }
