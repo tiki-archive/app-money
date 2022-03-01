@@ -1,40 +1,47 @@
 import 'package:flutter/cupertino.dart';
 import 'package:money/src/model/money_model_transaction.dart';
+import 'package:provider/provider.dart';
 
+import '../money_service.dart';
 import 'money_home_view_list_date.dart';
 import 'money_home_view_list_transaction.dart';
 
 class MoneyHomeViewList extends StatelessWidget {
-  final List<MoneyModelTransaction> list;
-  final bool example;
 
-  const MoneyHomeViewList({Key? key, required this.list, this.example = false})
+  final bool example;
+  final List<MoneyModelTransaction> transactions;
+  final ScrollController scrollController;
+  final Function? onRefresh;
+
+  const MoneyHomeViewList({Key? key, this.onRefresh, this.example = false, required this.scrollController, required this.transactions})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        child: Opacity(
+    return Opacity(
             opacity: example ? 0.5 : 1,
             child: Stack(children: [
-              SizedBox(
-                  height: double.infinity,
+              Align(
                   child: Image.asset(
                     'res/images/EXAMPLE.png',
                     package: 'money',
                     repeat: ImageRepeat.noRepeat,
                     alignment: Alignment.center,
                   )),
-              ListView.builder(
-                  itemCount: list.length,
+              SizedBox(
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                  child: ListView.builder(
+                  controller: scrollController,
+                  itemCount: transactions.length,
                   itemBuilder: (context, index) {
                     return Column(children: [
                       MoneyHomeViewListDate(
-                          current: list[index],
-                          last: index > 0 ? list[index - 1] : null),
-                      MoneyHomeViewListTransaction(transaction: list[index])
+                          current: transactions[index],
+                          last: index > 0 ? transactions[index - 1] : null),
+                      MoneyHomeViewListTransaction(transaction: transactions[index])
                     ]);
-                  })
-            ])));
+                  }))
+            ]));
   }
 }
