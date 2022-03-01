@@ -19,11 +19,11 @@ class MoneyService extends ChangeNotifier {
   late final MoneyController controller;
   late final MoneyStyle style;
 
-  MoneyService({required this.style}) {
+  MoneyService({required this.style, dynamic apiSignupService, String? referalCode}) {
     presenter = MoneyPresenter(this);
     model = MoneyModel();
     controller = MoneyController(this);
-    _getBalance();
+    _getBalance(apiSignupService, referalCode);
   }
 
   List<MoneyModelTransaction> generateList() {
@@ -63,7 +63,11 @@ class MoneyService extends ChangeNotifier {
     });
   }
 
-  Future _getBalance() async {
-    // TODO get balance from wallet
+  Future _getBalance(apiSignupService, referalCode) async {
+      if (referalCode != null && apiSignupService != null) {
+        int? count = await apiSignupService.getTotal(code: referalCode);
+        model.balance = count != null ? 5.0 * (count ~/ 10.0) : 0;
+        notifyListeners();
+      }
   }
 }
