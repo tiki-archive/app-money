@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:money/src/model/money_model_transaction.dart';
 import 'package:provider/provider.dart';
 
-import '../money_service.dart';
+import '../../money_service.dart';
 import 'money_home_view_header.dart';
 import 'money_home_view_list.dart';
 
@@ -40,7 +40,7 @@ class _MoneyBottomSheet extends State<MoneyHomeBottomSheet> {
     return AnimatedPositioned(
         curve: Curves.easeIn,
         duration: const Duration(milliseconds: 250),
-        bottom: -MediaQuery.of(context).size.height * heightFactor,
+        top: collapsed ? service.style.size(350) : service.style.size(0),
         child: GestureDetector(
             onVerticalDragStart: _onVerticalDragUpdate,
             onVerticalDragEnd: _onVerticalDragEnd,
@@ -53,11 +53,12 @@ class _MoneyBottomSheet extends State<MoneyHomeBottomSheet> {
                     color: Colors.white,
                     child: Column(children: [
                       GestureDetector(
-                        behavior: HitTestBehavior.opaque,
+                          behavior: HitTestBehavior.opaque,
                           onTap: () => collapsed ? _expand() : _collapse(),
                           child: Padding(
-                          padding: const EdgeInsets.only(top: 16, bottom: 35),
-                          child: Image.asset(
+                              padding:
+                                  const EdgeInsets.only(top: 0, bottom: 35),
+                              child: Image.asset(
                                   "res/images/" +
                                       (collapsed ? "arrow_up" : "arrow_down") +
                                       ".png",
@@ -83,14 +84,12 @@ class _MoneyBottomSheet extends State<MoneyHomeBottomSheet> {
   _collapse() {
     setState(() {
       collapsed = true;
-      heightFactor = 0.70;
     });
   }
 
   _expand() {
     setState(() {
       collapsed = false;
-      heightFactor = 0.4;
     });
   }
 

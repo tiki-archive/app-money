@@ -57,10 +57,8 @@ class MoneyDetailViewContentTable extends StatelessWidget {
                           left: service.style.size(8),
                           top: service.style.size(8),
                           bottom: service.style.size(8)),
-                      child:
-                        Text(DateFormat('MMM dd, y H:mm:s')
-                            .format(transaction.minted))
-                      )),
+                      child: Text(DateFormat('MMM dd, y H:mm:s')
+                          .format(transaction.minted)))),
             ]),
             transaction.backedUp != null
                 ? TableRow(children: [
@@ -78,7 +76,10 @@ class MoneyDetailViewContentTable extends StatelessWidget {
                             child: Row(children: [
                               Text(DateFormat('MMM dd, y H:mm:s')
                                   .format(transaction.backedUp!)),
-                              Padding(padding: EdgeInsets.only(left: service.style.text(12)),),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    left: service.style.text(12)),
+                              ),
                               Image.asset('res/images/single-check.png',
                                   package: 'money')
                             ]))),
@@ -94,20 +95,24 @@ class MoneyDetailViewContentTable extends StatelessWidget {
                       "Listed on",
                       textAlign: TextAlign.center,
                     )),
-              TableCell(
-                  child: Padding(
-                      padding: EdgeInsets.only(
-                          left: service.style.size(8),
-                          top: service.style.size(8),
-                          bottom: service.style.size(8)),
-                      child: Row(children: [
-                        Text(DateFormat('MMM dd, y H:mm:s')
-                            .format(transaction.listedOn!)),
-                        Padding(padding: EdgeInsets.only(left: service.style.text(12)),),
-                        Image.asset('res/images/single-check.png',
-                            package: 'money')
-                      ]))),
-            ]) : TableRow(children: [
+                    TableCell(
+                        child: Padding(
+                            padding: EdgeInsets.only(
+                                left: service.style.size(8),
+                                top: service.style.size(8),
+                                bottom: service.style.size(8)),
+                            child: Row(children: [
+                              Text(DateFormat('MMM dd, y H:mm:s')
+                                  .format(transaction.listedOn!)),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    left: service.style.text(12)),
+                              ),
+                              Image.asset('res/images/single-check.png',
+                                  package: 'money')
+                            ]))),
+                  ])
+                : TableRow(children: [
                     TableCell(child: Container()),
                     TableCell(child: Container())
                   ]),
