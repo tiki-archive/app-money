@@ -37,14 +37,12 @@ class MoneyDetailViewContentHeader extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(bottom: service.style.size(16)),
               child: Text("${transaction.unit} ${transaction.ammount}",
-                      style: TextStyle(
-                        color: service.style.textColor,
-                        fontWeight: FontWeight.bold,
-                        fontSize: service.style.text(30),
-                        fontFamily: 'Koara',
-                        package: 'money'
-                      )
-              ),
+                  style: TextStyle(
+                      color: service.style.textColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: service.style.text(30),
+                      fontFamily: 'Koara',
+                      package: 'money')),
             ),
             Padding(
               padding: EdgeInsets.only(bottom: service.style.size(16)),
