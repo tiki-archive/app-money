@@ -5,6 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../money_service.dart';
 
 class MoneyHomeViewAmount extends StatelessWidget {
@@ -25,7 +26,8 @@ class MoneyHomeViewAmount extends StatelessWidget {
             textAlign: TextAlign.right,
             style: TextStyle(
                 color: service.style.textColor,
-                fontFamily: "Koara", package: 'money',
+                fontFamily: "Koara",
+                package: 'money',
                 fontWeight: FontWeight.bold,
                 height: 0,
                 fontSize: service.style.text(64)),

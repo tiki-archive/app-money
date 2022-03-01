@@ -29,10 +29,13 @@ class MoneyHomeViewCashOutIcon extends StatelessWidget {
                     BoxShadow(
                       color: const Color(0x0D000000),
                       blurRadius: service.style.size(4),
-                      offset: Offset(service.style.size(2), service.style.size(2)), // Shadow position
+                      offset: Offset(service.style.size(2),
+                          service.style.size(2)), // Shadow position
                     ),
                   ]),
-              child: Center(child: Image.asset("res/images/upload-icon.png", package: 'money')),
+              child: Center(
+                  child: Image.asset("res/images/upload-icon.png",
+                      package: 'money')),
             )
           ],
         ),

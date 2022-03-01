@@ -21,7 +21,8 @@ class MoneyHomeViewSoon extends StatelessWidget {
         children: [
           SizedBox(
               child: Image(
-            image: const AssetImage('res/images/info-icon.png', package: 'money'),
+            image:
+                const AssetImage('res/images/info-icon.png', package: 'money'),
             width: service.style.text(18),
             fit: BoxFit.cover,
           )),

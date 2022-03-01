@@ -5,7 +5,6 @@
 import 'package:flutter/material.dart';
 
 class MoneyHomeViewCard extends StatelessWidget {
-
   const MoneyHomeViewCard({Key? key}) : super(key: key);
 
   @override

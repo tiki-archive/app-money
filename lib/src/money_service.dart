@@ -23,6 +23,7 @@ class MoneyService extends ChangeNotifier {
     presenter = MoneyPresenter(this);
     model = MoneyModel();
     controller = MoneyController(this);
+    _getBalance();
   }
 
   List<MoneyModelTransaction> generateList() {
@@ -60,5 +61,9 @@ class MoneyService extends ChangeNotifier {
           unit: units[Random().nextInt(100) % 2],
           ammount: "${Random().nextInt(10)}.${Random().nextInt(100)}");
     });
+  }
+
+  Future _getBalance() async {
+    // TODO get balance from wallet
   }
 }
