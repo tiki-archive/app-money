@@ -1,6 +1,6 @@
 name: money
 description: Money sdk for Tiki app.
-version: 0.0.2
+version: 0.0.5
 repository: https://github.com/tiki/money
 publish_to: none # package in active development
 
