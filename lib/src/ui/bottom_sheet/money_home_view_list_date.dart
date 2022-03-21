@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:money/src/model/money_model_transaction.dart';
+
+import '../../model/money_model_transaction.dart';
 
 class MoneyHomeViewListDate extends StatelessWidget {
   final MoneyModelTransaction current;

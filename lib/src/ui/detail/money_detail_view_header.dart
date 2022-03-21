@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:money/src/model/money_model_transaction.dart';
 import 'package:provider/provider.dart';
 
+import '../../model/money_model_transaction.dart';
 import '../../money_service.dart';
 
 class MoneyDetailViewHeader extends StatelessWidget {

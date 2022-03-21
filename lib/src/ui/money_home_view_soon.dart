@@ -4,8 +4,9 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:money/src/money_service.dart';
 import 'package:provider/provider.dart';
+
+import '../money_service.dart';
 
 class MoneyHomeViewSoon extends StatelessWidget {
   static const String _text = "You’ll be able to \nsell your data soon";
