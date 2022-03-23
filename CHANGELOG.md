@@ -1,3 +1,4 @@
-## 0.0.1
+## 0.0.5
 
-* TODO: Describe initial release.
+* Update dependencies.
+* Reformat code.

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:money/src/model/money_model_transaction.dart';
-import 'package:money/src/money_service.dart';
 import 'package:provider/provider.dart';
 
+import '../../model/money_model_transaction.dart';
+import '../../money_service.dart';
 import 'money_detail_view_content_header.dart';
 import 'money_detail_view_content_table.dart';
 import 'money_detail_view_header.dart';

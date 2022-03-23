@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:money/src/ui/money_home_view_cash_out.dart';
 import 'package:provider/provider.dart';
 
 import '../money_service.dart';
@@ -7,6 +6,7 @@ import 'bottom_sheet/money_home_bottom_sheet.dart';
 import 'money_home_view_amount.dart';
 import 'money_home_view_banner.dart';
 import 'money_home_view_card.dart';
+import 'money_home_view_cash_out.dart';
 import 'money_home_view_soon.dart';
 
 class MoneyHomeLayout extends StatelessWidget {

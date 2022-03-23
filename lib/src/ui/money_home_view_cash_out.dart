@@ -4,9 +4,9 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:money/src/money_service.dart';
 import 'package:provider/provider.dart';
 
+import '../money_service.dart';
 import 'money_home_view_cash_out_banner.dart';
 import 'money_home_view_cash_out_icon.dart';
 import 'money_home_view_cash_out_text.dart';

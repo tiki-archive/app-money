@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:money/src/money_service.dart';
 import 'package:provider/provider.dart';
+
+import '../../money_service.dart';
 
 class MoneyHomeViewHeader extends StatelessWidget {
   final String _title = "Data NFTs are on the way!";

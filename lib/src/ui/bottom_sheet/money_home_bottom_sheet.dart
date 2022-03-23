@@ -4,9 +4,9 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:money/src/model/money_model_transaction.dart';
 import 'package:provider/provider.dart';
 
+import '../../model/money_model_transaction.dart';
 import '../../money_service.dart';
 import 'money_home_view_header.dart';
 import 'money_home_view_list.dart';
@@ -14,6 +14,7 @@ import 'money_home_view_list.dart';
 class MoneyHomeBottomSheet extends StatefulWidget {
   final bool example;
   final List<MoneyModelTransaction> transactions;
+
   const MoneyHomeBottomSheet(
       {Key? key, this.example = false, required this.transactions})
       : super(key: key);
