@@ -73,6 +73,6 @@ class MoneyService extends ChangeNotifier {
     await MoneySignupRepository.total(referalCode, httpp.client(), (count) {
       model.balance = count != null ? 5.0 * (count ~/ 10.0) : 0;
       notifyListeners();
-    }, (error) => print(error));
+    }, (error) => _log.warning(error));
   }
 }
