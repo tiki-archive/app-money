@@ -13,19 +13,14 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.grey,
-        appBar: AppBar(
-          title: const Text('Money example app'),
-        ),
-        body: Money().home(example: true)
-        )
-    );
+        home: Scaffold(
+            backgroundColor: Colors.grey,
+            appBar: AppBar(
+              title: const Text('Money example app'),
+            ),
+            body: Money(referalCode: '\$0000T').home(example: true)));
   }
-
-
 }
