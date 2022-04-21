@@ -32,8 +32,7 @@ class MoneyHomeViewCashOutIcon extends StatelessWidget {
                     ),
                   ]),
               child: Center(
-                  child: Image.asset("res/images/upload-icon.png",
-                      package: 'money')),
+                  child: Icon(IconProvider.upload),
             )
           ],
         ),

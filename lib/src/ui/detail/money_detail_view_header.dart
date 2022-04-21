@@ -25,9 +25,8 @@ class MoneyDetailViewHeader extends StatelessWidget {
                       child: Container(
                           padding:
                               EdgeInsets.only(left: SizeProvider.instance.size(25)),
-                          child: Center(
-                              child: Image.asset("res/images/icon-back.png",
-                                  package: 'money'))))),
+                          child: const Center(
+                              child: Icon(IconProvider.arrow_back, color: ColorProvider.greyTwo))))),
               Container(
                   alignment: Alignment.center,
                   child: Text("NFT ${transaction.id.substring(0, 10)}",

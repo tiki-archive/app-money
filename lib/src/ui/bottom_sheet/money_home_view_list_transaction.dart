@@ -25,7 +25,7 @@ class MoneyHomeViewListTransaction extends StatelessWidget {
                   width: SizeProvider.instance.size(60),
                   height: SizeProvider.instance.size(30),
                   child: Icon(transaction.type.icon,
-                      size: SizeProvider.instance.size(23))),
+                      size: SizeProvider.instance.size(23), color: ColorProvider.yellow)),
               Expanded(
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
