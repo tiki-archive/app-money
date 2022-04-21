@@ -5,6 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:style/style.dart';
 
 import '../money_service.dart';
 
@@ -25,15 +26,15 @@ class MoneyHomeViewAmount extends StatelessWidget {
             "\$" + balance.toStringAsFixed(0),
             textAlign: TextAlign.right,
             style: TextStyle(
-                color: service.style.textColor,
+                color: ColorProvider.tikiBlue,
                 fontFamily: "Koara",
                 package: 'money',
                 fontWeight: FontWeight.bold,
                 height: 0,
-                fontSize: service.style.text(64)),
+                fontSize: SizeProvider.instance.text(64)),
           ),
           Container(
-              margin: EdgeInsets.only(top: service.style.size(16)),
+              margin: EdgeInsets.only(top: SizeProvider.instance.size(16)),
               child: Text(
                 _text,
                 textAlign: TextAlign.right,
@@ -41,7 +42,7 @@ class MoneyHomeViewAmount extends StatelessWidget {
                     color: const Color(0xFF545454),
                     fontFamily: "Koara",
                     fontWeight: FontWeight.bold,
-                    fontSize: service.style.text(12)),
+                    fontSize: SizeProvider.instance.text(12)),
               ))
         ]);
   }

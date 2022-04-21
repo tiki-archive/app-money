@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:style/style.dart';
 
-import '../../money_service.dart';
 
 class MoneyHomeViewHeader extends StatelessWidget {
   final String _title = "Data NFTs are on the way!";
@@ -16,7 +15,6 @@ start showing up in a couple weeks.
 
   @override
   Widget build(BuildContext context) {
-    MoneyService service = Provider.of<MoneyService>(context);
     return SizedBox(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -31,21 +29,21 @@ start showing up in a couple weeks.
                 _title,
                 textAlign: TextAlign.start,
                 style: TextStyle(
-                    fontFamily: service.style.headerFontFamily,
-                    color: service.style.headerColor,
-                    fontSize: service.style.text(18),
+                    fontFamily: TextProvider.familyKoara,
+                    color: ColorProvider.tikiBlue,
+                    fontSize: SizeProvider.instance.text(18),
                     fontWeight: FontWeight.bold),
               ),
               Padding(
-                padding: EdgeInsets.only(bottom: service.style.size(10)),
+                padding: EdgeInsets.only(bottom: SizeProvider.instance.size(10)),
               ),
               Text(
                 _text,
                 textAlign: TextAlign.start,
                 style: TextStyle(
-                  fontFamily: service.style.headerFontFamily,
-                  color: service.style.headerColor,
-                  fontSize: service.style.text(13),
+                  fontFamily: TextProvider.familyKoara,
+                  color: ColorProvider.tikiBlue,
+                  fontSize: SizeProvider.instance.text(13),
                 ),
               )
             ],

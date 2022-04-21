@@ -17,27 +17,10 @@ dependencies:
   logging: ^1.0.2
   provider: ^6.0.2
   intl: ^0.17.0
+  style:
+    path: ../style
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^1.0.4
-
-flutter:
-  plugin:
-    platforms:
-      android:
-        package: com.mytiki.money
-        pluginClass: MoneyPlugin
-      ios:
-        pluginClass: MoneyPlugin
-  assets:
-    - res/images/
-  fonts:
-    - family: Koara
-      fonts:
-        - asset: res/fonts/Koara-Bold.ttf
-          weight: 700
-        - asset: res/fonts/Koara-Regular.ttf
-        - asset: res/fonts/Koara-Light.ttf
-          weight: 300

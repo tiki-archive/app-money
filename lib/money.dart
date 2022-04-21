@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:httpp/httpp.dart';
+import 'package:style/style.dart';
 
 import 'src/money_service.dart';
-import 'src/money_style.dart';
 
 class Money {
   late final MoneyService _service;
 
-  Money({MoneyStyle? style, Httpp? httpp, String? referalCode})
+  Money({Httpp? httpp, String? referalCode})
       : _service = MoneyService(
-            style: style ?? MoneyStyle(),
+            style: Style.instance,
             httpp: httpp ?? Httpp(),
             referalCode: referalCode);
 

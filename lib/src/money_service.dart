@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:httpp/httpp.dart';
 import 'package:logging/logging.dart';
+import 'package:style/style.dart';
 
 import 'model/money_model.dart';
 import 'model/money_model_transaction.dart';
@@ -11,7 +12,6 @@ import 'model/money_model_transaction_type.dart';
 import 'money_controller.dart';
 import 'money_presenter.dart';
 import 'money_signup_repository.dart';
-import 'money_style.dart';
 
 class MoneyService extends ChangeNotifier {
   final Logger _log = Logger('MoneyService');
@@ -19,7 +19,7 @@ class MoneyService extends ChangeNotifier {
   late final MoneyModel model;
   late final MoneyPresenter presenter;
   late final MoneyController controller;
-  late final MoneyStyle style;
+  late final Style style;
   late final MoneySignupRepository moneySignupRepository;
 
   MoneyService(

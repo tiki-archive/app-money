@@ -4,10 +4,9 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:style/style.dart';
 
 import '../../model/money_model_transaction.dart';
-import '../../money_service.dart';
 import 'money_home_view_header.dart';
 import 'money_home_view_list.dart';
 
@@ -37,20 +36,19 @@ class _MoneyBottomSheet extends State<MoneyHomeBottomSheet> {
 
   @override
   Widget build(BuildContext context) {
-    MoneyService service = Provider.of<MoneyService>(context);
     return AnimatedPositioned(
         curve: Curves.easeIn,
         duration: const Duration(milliseconds: 250),
-        top: collapsed ? service.style.size(350) : service.style.size(0),
+        top: collapsed ? SizeProvider.instance.size(350) : SizeProvider.instance.size(0),
         child: GestureDetector(
             onVerticalDragStart: _onVerticalDragUpdate,
             onVerticalDragEnd: _onVerticalDragEnd,
             child: ClipRRect(
                 borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(service.style.size(30)),
-                    topLeft: Radius.circular(service.style.size(30))),
+                    topRight: Radius.circular(SizeProvider.instance.size(30)),
+                    topLeft: Radius.circular(SizeProvider.instance.size(30))),
                 child: Container(
-                    padding: EdgeInsets.only(top: service.style.size(16)),
+                    padding: EdgeInsets.only(top: SizeProvider.instance.size(16)),
                     color: Colors.white,
                     child: Column(children: [
                       GestureDetector(
