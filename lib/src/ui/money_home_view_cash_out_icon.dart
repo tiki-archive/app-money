@@ -21,7 +21,7 @@ class MoneyHomeViewCashOutIcon extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(SizeProvider.instance.size(12)),
               decoration: BoxDecoration(
-                  color: const Color(0xFFAFAFAF),
+                  color: ColorProvider.greyFour,
                   borderRadius: BorderRadius.circular(SizeProvider.instance.size(60)),
                   boxShadow: [
                     BoxShadow(
@@ -32,7 +32,7 @@ class MoneyHomeViewCashOutIcon extends StatelessWidget {
                     ),
                   ]),
               child: const Center(
-                  child: Icon(IconProvider.upload),
+                  child: Icon(IconProvider.upload, color: ColorProvider.white),
             ))
           ],
         ),
@@ -43,7 +43,7 @@ class MoneyHomeViewCashOutIcon extends StatelessWidget {
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: SizeProvider.instance.text(12),
-                  color: const Color(0xFFAFAFAF)),
+                  color: ColorProvider.greyFour),
             ))
       ],
     );

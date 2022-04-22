@@ -23,7 +23,7 @@ class MoneyPresenter {
         context: context,
         isScrollControlled: true,
         isDismissible: true,
-        backgroundColor: ColorProvider.greyFour,
+        backgroundColor: ColorProvider.white,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
                 top: Radius.circular(SizeProvider.instance.size(36)))),

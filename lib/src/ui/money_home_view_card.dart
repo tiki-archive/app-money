@@ -11,8 +11,11 @@ class MoneyHomeViewCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: ImgProvider.walletCard,
-        alignment: Alignment.center,
+      width: MediaQuery.of(context).size.width,
+      child: FittedBox(
+        fit: BoxFit.cover,
+        child: ImgProvider.walletCard,
+      )
     );
   }
 }

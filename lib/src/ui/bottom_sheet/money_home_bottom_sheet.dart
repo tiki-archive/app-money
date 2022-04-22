@@ -54,14 +54,16 @@ class _MoneyBottomSheet extends State<MoneyHomeBottomSheet> {
                       GestureDetector(
                           behavior: HitTestBehavior.opaque,
                           onTap: () => collapsed ? _expand() : _collapse(),
-                          child: Padding(
+                          child: Container(
+                              width: MediaQuery.of(context).size.width,
                               padding:
                                   const EdgeInsets.only(top: 0, bottom: 35),
                               child: Icon(
                                   collapsed ?
                                     IconProvider.large_arrow_up :
                                     IconProvider.large_arrow_down,
-                                  color: ColorProvider.greyThree
+                                  color: ColorProvider.greyTwo,
+                                  size: SizeProvider.instance.text(20)
                               ))),
                       const MoneyHomeViewHeader(),
                       MoneyHomeViewList(

@@ -79,7 +79,7 @@ class MoneyDetailViewContentTable extends StatelessWidget {
                                 padding: EdgeInsets.only(
                                     left: SizeProvider.instance.text(12)),
                               ),
-                              const Icon(IconProvider.single_check, color: ColorProvider.green)
+                              Icon(IconProvider.single_check, color: ColorProvider.green, size: SizeProvider.instance.text(12),)
                             ]))),
                   ])
                 : TableRow(children: [
@@ -105,8 +105,7 @@ class MoneyDetailViewContentTable extends StatelessWidget {
                               Padding(
                                 padding: EdgeInsets.only(
                                     left: SizeProvider.instance.text(12)),
-                              ),
-                             const Icon(IconProvider.single_check, color: ColorProvider.green)
+                              ), Icon(IconProvider.single_check, color: ColorProvider.green, size: SizeProvider.instance.text(12))
                             ]))),
                   ])
                 : TableRow(children: [

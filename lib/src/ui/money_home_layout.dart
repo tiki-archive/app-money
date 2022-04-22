@@ -22,7 +22,7 @@ class MoneyHomeLayout extends StatelessWidget {
         height: double.infinity,
         child: Stack(children: [
           Container(
-              height: SizeProvider.instance.size(350),
+              height: SizeProvider.instance.size(350.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(SizeProvider.instance.size(15)),
                 boxShadow: [

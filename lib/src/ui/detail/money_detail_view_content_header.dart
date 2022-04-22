@@ -30,7 +30,7 @@ class MoneyDetailViewContentHeader extends StatelessWidget {
                     child: CircleAvatar(
                         radius: SizeProvider.instance.size(68),
                         backgroundColor: Colors.amberAccent,
-                        child: Icon(transaction.type.icon, size: SizeProvider.instance.size(30))))),
+                        child: Icon(transaction.type.icon, size: SizeProvider.instance.size(60), color: ColorProvider.white)))),
             Padding(
               padding: EdgeInsets.only(bottom: SizeProvider.instance.size(16)),
               child: Text("${transaction.unit} ${transaction.ammount}",

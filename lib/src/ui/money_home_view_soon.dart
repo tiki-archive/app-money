@@ -22,7 +22,6 @@ class MoneyHomeViewSoon extends StatelessWidget {
             width: SizeProvider.instance.text(18),
           ),
           Container(
-              margin: EdgeInsets.only(top: SizeProvider.instance.text(8)),
               child: Text(
                 _text,
                 style: TextStyle(
