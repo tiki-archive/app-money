@@ -11,11 +11,9 @@ class MoneyHomeViewBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image(
-      image:
-          const AssetImage('res/images/ref-only-banner.png', package: 'money'),
+    return SizedBox(
+      child: ImgProvider.refOnlyBanner,
       height: SizeProvider.instance.size(80),
-      fit: BoxFit.fitHeight,
     );
   }
 }

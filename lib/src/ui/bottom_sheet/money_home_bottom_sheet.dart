@@ -57,11 +57,12 @@ class _MoneyBottomSheet extends State<MoneyHomeBottomSheet> {
                           child: Padding(
                               padding:
                                   const EdgeInsets.only(top: 0, bottom: 35),
-                              child: Image.asset(
-                                  "res/images/" +
-                                      (collapsed ? "arrow_up" : "arrow_down") +
-                                      ".png",
-                                  package: "money"))),
+                              child: Icon(
+                                  collapsed ?
+                                    IconProvider.large_arrow_up :
+                                    IconProvider.large_arrow_down,
+                                  color: ColorProvider.greyThree
+                              ))),
                       const MoneyHomeViewHeader(),
                       MoneyHomeViewList(
                           transactions: widget.transactions,

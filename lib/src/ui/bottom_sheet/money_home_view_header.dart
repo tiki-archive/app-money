@@ -30,6 +30,7 @@ start showing up in a couple weeks.
                 textAlign: TextAlign.start,
                 style: TextStyle(
                     fontFamily: TextProvider.familyKoara,
+                    package: 'style',
                     color: ColorProvider.tikiBlue,
                     fontSize: SizeProvider.instance.text(18),
                     fontWeight: FontWeight.bold),
@@ -48,11 +49,7 @@ start showing up in a couple weeks.
               )
             ],
           ),
-          Image.asset(
-            "res/images/pineapple-pizza.png",
-            package: "money",
-            alignment: Alignment.center,
-          )
+          Center(child: ImgProvider.pineapplePizza)
         ],
       ),
     );

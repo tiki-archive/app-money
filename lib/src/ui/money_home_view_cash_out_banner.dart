@@ -14,10 +14,9 @@ class MoneyHomeViewCashOutBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image(
-          image: const AssetImage('res/images/banner.png', package: 'money'),
+        SizedBox(
+          child: ImgProvider.walletBanner,
           height: SizeProvider.instance.size(25),
-          fit: BoxFit.cover,
         ),
         Container(
             margin: EdgeInsets.symmetric(

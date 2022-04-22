@@ -18,12 +18,9 @@ class MoneyHomeViewSoon extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-              child: Image(
-            image:
-                const AssetImage('res/images/info-icon.png', package: 'money'),
+              child: ImgProvider.infoIcon,
             width: SizeProvider.instance.text(18),
-            fit: BoxFit.cover,
-          )),
+          ),
           Container(
               margin: EdgeInsets.only(top: SizeProvider.instance.text(8)),
               child: Text(

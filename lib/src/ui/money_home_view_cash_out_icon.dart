@@ -31,9 +31,9 @@ class MoneyHomeViewCashOutIcon extends StatelessWidget {
                           SizeProvider.instance.size(2)), // Shadow position
                     ),
                   ]),
-              child: Center(
+              child: const Center(
                   child: Icon(IconProvider.upload),
-            )
+            ))
           ],
         ),
         Container(

@@ -38,8 +38,8 @@ class MoneyDetailViewContentHeader extends StatelessWidget {
                       color: ColorProvider.tikiBlue,
                       fontWeight: FontWeight.bold,
                       fontSize: SizeProvider.instance.text(30),
-                      fontFamily: 'Koara',
-                      package: 'money')),
+                      fontFamily: TextProvider.familyKoara,
+                      package: 'style')),
             ),
             Padding(
               padding: EdgeInsets.only(bottom: SizeProvider.instance.size(16)),

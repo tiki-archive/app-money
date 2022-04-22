@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:money/money.dart';
+import 'package:style/style.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +22,10 @@ class _MyAppState extends State<MyApp> {
             appBar: AppBar(
               title: const Text('Money example app'),
             ),
-            body: Money(referalCode: '\$001NZ').home(example: true)));
+            body: Builder(builder: (context) {
+              Style.init(context);
+              return Money(referalCode: '\$001NZ').home(example: true);
+              })));
   }
 
 

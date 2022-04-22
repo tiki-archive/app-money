@@ -27,8 +27,8 @@ class MoneyHomeViewAmount extends StatelessWidget {
             textAlign: TextAlign.right,
             style: TextStyle(
                 color: ColorProvider.tikiBlue,
-                fontFamily: "Koara",
-                package: 'money',
+                fontFamily: TextProvider.familyKoara,
+                package: 'style',
                 fontWeight: FontWeight.bold,
                 height: 0,
                 fontSize: SizeProvider.instance.text(64)),
@@ -40,7 +40,8 @@ class MoneyHomeViewAmount extends StatelessWidget {
                 textAlign: TextAlign.right,
                 style: TextStyle(
                     color: const Color(0xFF545454),
-                    fontFamily: "Koara",
+                    fontFamily: TextProvider.familyKoara,
+                    package: 'style',
                     fontWeight: FontWeight.bold,
                     fontSize: SizeProvider.instance.text(12)),
               ))

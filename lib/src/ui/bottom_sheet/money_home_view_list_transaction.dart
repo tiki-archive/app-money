@@ -40,11 +40,9 @@ class MoneyHomeViewListTransaction extends StatelessWidget {
                           padding:
                               EdgeInsets.only(left: SizeProvider.instance.size(5))),
                       transaction.listedOn != null
-                          ? Image.asset("res/images/double-check.png",
-                              package: "money")
+                          ? const Icon(IconProvider.single_check, color: ColorProvider.green)
                           : transaction.backedUp != null
-                              ? Image.asset("res/images/single-check.png",
-                                  package: "money")
+                              ? const Icon(IconProvider.double_check, color: ColorProvider.green)
                               : Container(),
                     ]),
                     Text(transaction.type.asString(),
