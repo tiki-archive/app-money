@@ -12,6 +12,7 @@ class MoneyHomeViewCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
+      height: SizeProvider.instance.height(215),
       child: FittedBox(
         fit: BoxFit.cover,
         child: ImgProvider.walletCard,
