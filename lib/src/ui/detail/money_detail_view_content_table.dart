@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:provider/provider.dart';
+import 'package:style/style.dart';
 
 import '../../model/money_model_transaction.dart';
-import '../../money_service.dart';
 
 class MoneyDetailViewContentTable extends StatelessWidget {
   final MoneyModelTransaction transaction;
@@ -13,24 +12,23 @@ class MoneyDetailViewContentTable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    MoneyService service = Provider.of<MoneyService>(context);
     return Container(
         decoration: BoxDecoration(
-          border: Border.all(width: 1, color: service.style.textColor),
+          border: Border.all(width: 1, color: ColorProvider.tikiBlue),
           borderRadius: BorderRadius.all(
-            Radius.circular(service.style.size(8)),
+            Radius.circular(SizeProvider.instance.size(8)),
           ),
         ),
         child: Table(
           columnWidths: <int, TableColumnWidth>{
-            0: FixedColumnWidth(service.style.size(90)),
+            0: FixedColumnWidth(SizeProvider.instance.size(90)),
             1: const FlexColumnWidth(),
           },
           defaultVerticalAlignment: TableCellVerticalAlignment.middle,
           border: TableBorder.symmetric(
               inside: BorderSide(
-                  width: service.style.size(1),
-                  color: service.style.textColor)),
+                  width: SizeProvider.instance.size(1),
+                  color: ColorProvider.tikiBlue)),
           children: [
             TableRow(children: [
               const TableCell(
@@ -41,9 +39,9 @@ class MoneyDetailViewContentTable extends StatelessWidget {
               TableCell(
                   child: Padding(
                       padding: EdgeInsets.only(
-                          left: service.style.size(8),
-                          top: service.style.size(8),
-                          bottom: service.style.size(8)),
+                          left: SizeProvider.instance.size(8),
+                          top: SizeProvider.instance.size(8),
+                          bottom: SizeProvider.instance.size(8)),
                       child: Text(transaction.id.substring(0, 10)))),
             ]),
             TableRow(children: [
@@ -55,9 +53,9 @@ class MoneyDetailViewContentTable extends StatelessWidget {
               TableCell(
                   child: Padding(
                       padding: EdgeInsets.only(
-                          left: service.style.size(8),
-                          top: service.style.size(8),
-                          bottom: service.style.size(8)),
+                          left: SizeProvider.instance.size(8),
+                          top: SizeProvider.instance.size(8),
+                          bottom: SizeProvider.instance.size(8)),
                       child: Text(DateFormat('MMM dd, y H:mm:s')
                           .format(transaction.minted)))),
             ]),
@@ -71,18 +69,17 @@ class MoneyDetailViewContentTable extends StatelessWidget {
                     TableCell(
                         child: Padding(
                             padding: EdgeInsets.only(
-                                left: service.style.size(8),
-                                top: service.style.size(8),
-                                bottom: service.style.size(8)),
+                                left: SizeProvider.instance.size(8),
+                                top: SizeProvider.instance.size(8),
+                                bottom: SizeProvider.instance.size(8)),
                             child: Row(children: [
                               Text(DateFormat('MMM dd, y H:mm:s')
                                   .format(transaction.backedUp!)),
                               Padding(
                                 padding: EdgeInsets.only(
-                                    left: service.style.text(12)),
+                                    left: SizeProvider.instance.text(12)),
                               ),
-                              Image.asset('res/images/single-check.png',
-                                  package: 'money')
+                              Icon(IconProvider.single_check, color: ColorProvider.green, size: SizeProvider.instance.text(12),)
                             ]))),
                   ])
                 : TableRow(children: [
@@ -99,18 +96,16 @@ class MoneyDetailViewContentTable extends StatelessWidget {
                     TableCell(
                         child: Padding(
                             padding: EdgeInsets.only(
-                                left: service.style.size(8),
-                                top: service.style.size(8),
-                                bottom: service.style.size(8)),
+                                left: SizeProvider.instance.size(8),
+                                top: SizeProvider.instance.size(8),
+                                bottom: SizeProvider.instance.size(8)),
                             child: Row(children: [
                               Text(DateFormat('MMM dd, y H:mm:s')
                                   .format(transaction.listedOn!)),
                               Padding(
                                 padding: EdgeInsets.only(
-                                    left: service.style.text(12)),
-                              ),
-                              Image.asset('res/images/single-check.png',
-                                  package: 'money')
+                                    left: SizeProvider.instance.text(12)),
+                              ), Icon(IconProvider.single_check, color: ColorProvider.green, size: SizeProvider.instance.text(12))
                             ]))),
                   ])
                 : TableRow(children: [
@@ -126,9 +121,9 @@ class MoneyDetailViewContentTable extends StatelessWidget {
               TableCell(
                   child: Padding(
                       padding: EdgeInsets.only(
-                          left: service.style.size(8),
-                          top: service.style.size(8),
-                          bottom: service.style.size(8)),
+                          left: SizeProvider.instance.size(8),
+                          top: SizeProvider.instance.size(8),
+                          bottom: SizeProvider.instance.size(8)),
                       child: Text(transaction.fingerprint))),
             ]),
           ],

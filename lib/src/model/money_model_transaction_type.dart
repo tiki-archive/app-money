@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:style/style.dart';
+
 enum MoneyModelTransactionType{
   subject,
   zipcode
@@ -11,12 +14,12 @@ extension MoneyModelTransactionTypeExt on MoneyModelTransactionType{
     return name[0].toUpperCase() + name.substring(1);
   }
 
-  String get icon {
+  IconData get icon {
     switch(this){
       case MoneyModelTransactionType.subject:
-        return "mail";
+        return IconProvider.mail;
       case MoneyModelTransactionType.zipcode:
-        return "location";
+        return IconProvider.location;
     }
   }
 }

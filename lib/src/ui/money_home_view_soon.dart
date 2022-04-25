@@ -4,9 +4,7 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-import '../money_service.dart';
+import 'package:style/style.dart';
 
 class MoneyHomeViewSoon extends StatelessWidget {
   static const String _text = "You’ll be able to \nsell your data soon";
@@ -15,26 +13,21 @@ class MoneyHomeViewSoon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    MoneyService service = Provider.of<MoneyService>(context);
     return Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-              child: Image(
-            image:
-                const AssetImage('res/images/info-icon.png', package: 'money'),
-            width: service.style.text(18),
-            fit: BoxFit.cover,
-          )),
+              child: ImgProvider.infoIcon,
+            width: SizeProvider.instance.text(18),
+          ),
           Container(
-              margin: EdgeInsets.only(top: service.style.text(8)),
               child: Text(
                 _text,
                 style: TextStyle(
-                    color: service.style.textColor,
+                    color: ColorProvider.tikiBlue,
                     fontWeight: FontWeight.w800,
-                    fontSize: service.style.text(14)),
+                    fontSize: SizeProvider.instance.text(14)),
               ))
         ]);
   }

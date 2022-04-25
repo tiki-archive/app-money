@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:httpp/httpp.dart';
+import 'package:style/style.dart';
 
 import 'src/money_service.dart';
-import 'src/money_style.dart';
 
 class Money {
   late final MoneyService _service;
 
-  Money({MoneyStyle? style, dynamic apiSignupService, String? referalCode})
+  Money({Httpp? httpp, String? referalCode})
       : _service = MoneyService(
-            style: style ?? MoneyStyle(),
-            apiSignupService: apiSignupService,
+            style: Style.instance,
+            httpp: httpp ?? Httpp(),
             referalCode: referalCode);
 
   Widget home({bool example = false}) =>
