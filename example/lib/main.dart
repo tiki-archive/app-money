@@ -21,6 +21,8 @@ class _MyAppState extends State<MyApp> {
             appBar: AppBar(
               title: const Text('Money example app'),
             ),
-            body: Money(referalCode: '\$0000T').home(example: true)));
+            body: Money(referalCode: '\$001NZ').home(example: true)));
   }
+
+
 }
