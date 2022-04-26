@@ -4,7 +4,7 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:style/style.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 class MoneyHomeViewSoon extends StatelessWidget {
   static const String _text = "You’ll be able to \nsell your data soon";

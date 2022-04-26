@@ -4,7 +4,7 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:style/style.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../../model/money_model_transaction.dart';
 import 'money_home_view_header.dart';
@@ -60,8 +60,8 @@ class _MoneyBottomSheet extends State<MoneyHomeBottomSheet> {
                                   const EdgeInsets.only(top: 0, bottom: 35),
                               child: Icon(
                                   collapsed ?
-                                    IconProvider.large_arrow_up :
-                                    IconProvider.large_arrow_down,
+                                    IconProvider.arrow_thick_up :
+                                    IconProvider.arrow_thick_down,
                                   color: ColorProvider.greyTwo,
                                   size: SizeProvider.instance.text(20)
                               ))),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:style/style.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../../model/money_model_transaction.dart';
 
@@ -26,7 +26,7 @@ class MoneyDetailViewHeader extends StatelessWidget {
                           padding:
                               EdgeInsets.only(left: SizeProvider.instance.size(25)),
                           child: const Center(
-                              child: Icon(IconProvider.arrow_back, color: ColorProvider.greyTwo))))),
+                              child: Icon(IconProvider.arrow_left, color: ColorProvider.greyTwo))))),
               Container(
                   alignment: Alignment.center,
                   child: Text("NFT ${transaction.id.substring(0, 10)}",

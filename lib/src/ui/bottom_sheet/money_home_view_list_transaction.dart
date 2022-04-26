@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:style/style.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../../model/money_model_transaction.dart';
 import '../../model/money_model_transaction_type.dart';
@@ -40,9 +40,9 @@ class MoneyHomeViewListTransaction extends StatelessWidget {
                           padding:
                               EdgeInsets.only(left: SizeProvider.instance.size(5))),
                       transaction.listedOn != null
-                          ?  Icon(IconProvider.single_check,color: ColorProvider.green, size: SizeProvider.instance.text(12))
+                          ?  Icon(IconProvider.check,color: ColorProvider.green, size: SizeProvider.instance.text(12))
                           : transaction.backedUp != null
-                              ?  Icon(IconProvider.double_check,color: ColorProvider.green, size: SizeProvider.instance.text(12))
+                              ?  Icon(IconProvider.check_double,color: ColorProvider.green, size: SizeProvider.instance.text(12))
                               : Container(),
                     ]),
                     Text(transaction.type.asString(),

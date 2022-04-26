@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:style/style.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../../model/money_model_transaction.dart';
 
@@ -79,7 +79,7 @@ class MoneyDetailViewContentTable extends StatelessWidget {
                                 padding: EdgeInsets.only(
                                     left: SizeProvider.instance.text(12)),
                               ),
-                              Icon(IconProvider.single_check, color: ColorProvider.green, size: SizeProvider.instance.text(12),)
+                              Icon(IconProvider.check, color: ColorProvider.green, size: SizeProvider.instance.text(12),)
                             ]))),
                   ])
                 : TableRow(children: [
@@ -105,7 +105,7 @@ class MoneyDetailViewContentTable extends StatelessWidget {
                               Padding(
                                 padding: EdgeInsets.only(
                                     left: SizeProvider.instance.text(12)),
-                              ), Icon(IconProvider.single_check, color: ColorProvider.green, size: SizeProvider.instance.text(12))
+                              ), Icon(IconProvider.check, color: ColorProvider.green, size: SizeProvider.instance.text(12))
                             ]))),
                   ])
                 : TableRow(children: [
