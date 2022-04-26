@@ -4,7 +4,7 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:style/style.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import 'money_home_view_cash_out_banner.dart';
 import 'money_home_view_cash_out_icon.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:style/style.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../../model/money_model_transaction.dart';
 import 'money_home_view_list_date.dart';

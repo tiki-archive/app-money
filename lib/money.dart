@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:httpp/httpp.dart';
-import 'package:style/style.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import 'src/money_service.dart';
 
@@ -9,7 +9,7 @@ class Money {
 
   Money({Httpp? httpp, String? referalCode})
       : _service = MoneyService(
-            style: Style.instance,
+            style: TikiStyle.instance,
             httpp: httpp ?? Httpp(),
             referalCode: referalCode);
 

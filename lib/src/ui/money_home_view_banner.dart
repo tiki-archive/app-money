@@ -4,7 +4,7 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:style/style.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 class MoneyHomeViewBanner extends StatelessWidget {
   const MoneyHomeViewBanner({Key? key}) : super(key: key);

@@ -3,7 +3,7 @@
  * MIT license. See LICENSE file in root directory.
  */
 import 'package:flutter/material.dart';
-import 'package:style/style.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 class MoneyHomeViewCashOutIcon extends StatelessWidget {
   static const String _text = "Cash out";
