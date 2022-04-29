@@ -3,9 +3,7 @@
  * MIT license. See LICENSE file in root directory.
  */
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-import '../money_service.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 class MoneyHomeViewCashOutText extends StatelessWidget {
   static const String _text =
@@ -15,13 +13,12 @@ class MoneyHomeViewCashOutText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    MoneyService service = Provider.of<MoneyService>(context);
     return Text(
       _text,
       style: TextStyle(
-          color: service.style.textColor,
+          color: ColorProvider.tikiBlue,
           fontWeight: FontWeight.w600,
-          fontSize: service.style.text(12)),
+          fontSize: SizeProvider.instance.text(12)),
     );
   }
 }

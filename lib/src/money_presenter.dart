@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../../src/money_service.dart';
 import 'model/money_model_transaction.dart';
@@ -22,10 +23,10 @@ class MoneyPresenter {
         context: context,
         isScrollControlled: true,
         isDismissible: true,
-        backgroundColor: service.style.modalNavColor,
+        backgroundColor: ColorProvider.white,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
-                top: Radius.circular(service.style.size(36)))),
+                top: Radius.circular(SizeProvider.instance.size(36)))),
         builder: (BuildContext context) => ChangeNotifierProvider.value(
             value: service,
             child: MoneyDetailLayout(transaction: transaction)));

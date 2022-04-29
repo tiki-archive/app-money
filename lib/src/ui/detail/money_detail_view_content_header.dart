@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../../model/money_model_transaction.dart';
 import '../../model/money_model_transaction_type.dart';
-import '../../money_service.dart';
 
 class MoneyDetailViewContentHeader extends StatelessWidget {
   final MoneyModelTransaction transaction;
@@ -13,48 +12,45 @@ class MoneyDetailViewContentHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    MoneyService service = Provider.of<MoneyService>(context);
     return Container(
         padding: EdgeInsets.only(
-            top: service.style.size(25),
-            bottom: service.style.size(8),
-            left: service.style.size(16),
-            right: service.style.size(16)),
+            top: SizeProvider.instance.size(25),
+            bottom: SizeProvider.instance.size(8),
+            left: SizeProvider.instance.size(16),
+            right: SizeProvider.instance.size(16)),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-                padding: EdgeInsets.only(bottom: service.style.size(16)),
+                padding: EdgeInsets.only(bottom: SizeProvider.instance.size(16)),
                 child: CircleAvatar(
-                    radius: service.style.size(70),
+                    radius: SizeProvider.instance.size(70),
                     backgroundColor: Colors.black,
                     child: CircleAvatar(
-                        radius: service.style.size(68),
+                        radius: SizeProvider.instance.size(68),
                         backgroundColor: Colors.amberAccent,
-                        child: Image.asset(
-                            "res/images/${transaction.type.icon}-big.png",
-                            package: "money")))),
+                        child: Icon(transaction.type.icon, size: SizeProvider.instance.size(60), color: ColorProvider.white)))),
             Padding(
-              padding: EdgeInsets.only(bottom: service.style.size(16)),
+              padding: EdgeInsets.only(bottom: SizeProvider.instance.size(16)),
               child: Text("${transaction.unit} ${transaction.ammount}",
                   style: TextStyle(
-                      color: service.style.textColor,
+                      color: ColorProvider.tikiBlue,
                       fontWeight: FontWeight.bold,
-                      fontSize: service.style.text(30),
-                      fontFamily: 'Koara',
-                      package: 'money')),
+                      fontSize: SizeProvider.instance.text(30),
+                      fontFamily: TextProvider.familyKoara,
+                      package: 'style')),
             ),
             Padding(
-              padding: EdgeInsets.only(bottom: service.style.size(16)),
+              padding: EdgeInsets.only(bottom: SizeProvider.instance.size(16)),
               child: RichText(
                   textAlign: TextAlign.center,
                   text: TextSpan(
                       text: "Subject: ",
                       style: TextStyle(
-                        color: service.style.textColor,
+                        color: ColorProvider.tikiBlue,
                         fontWeight: FontWeight.bold,
-                        fontSize: service.style.text(12),
+                        fontSize: SizeProvider.instance.text(12),
                       ),
                       children: [
                         TextSpan(

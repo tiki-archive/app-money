@@ -11,7 +11,6 @@ import 'model/money_model_transaction_type.dart';
 import 'money_controller.dart';
 import 'money_presenter.dart';
 import 'money_signup_repository.dart';
-import 'money_style.dart';
 
 class MoneyService extends ChangeNotifier {
   final Logger _log = Logger('MoneyService');
@@ -19,11 +18,10 @@ class MoneyService extends ChangeNotifier {
   late final MoneyModel model;
   late final MoneyPresenter presenter;
   late final MoneyController controller;
-  late final MoneyStyle style;
   late final MoneySignupRepository moneySignupRepository;
 
   MoneyService(
-      {required this.style, required Httpp httpp, String? referalCode}) {
+      {required Httpp httpp, String? referalCode}) {
     presenter = MoneyPresenter(this);
     model = MoneyModel();
     controller = MoneyController(this);

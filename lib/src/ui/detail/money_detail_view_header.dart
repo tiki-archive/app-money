@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../../model/money_model_transaction.dart';
-import '../../money_service.dart';
 
 class MoneyDetailViewHeader extends StatelessWidget {
   final MoneyModelTransaction transaction;
@@ -12,9 +11,8 @@ class MoneyDetailViewHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    MoneyService service = Provider.of<MoneyService>(context);
     return Padding(
-        padding: EdgeInsets.only(top: service.style.size(24)),
+        padding: EdgeInsets.only(top: SizeProvider.instance.size(24)),
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -26,18 +24,17 @@ class MoneyDetailViewHeader extends StatelessWidget {
                       alignment: Alignment.center,
                       child: Container(
                           padding:
-                              EdgeInsets.only(left: service.style.size(25)),
-                          child: Center(
-                              child: Image.asset("res/images/icon-back.png",
-                                  package: 'money'))))),
+                              EdgeInsets.only(left: SizeProvider.instance.size(25)),
+                          child: const Center(
+                              child: Icon(IconProvider.arrow_left, color: ColorProvider.greyTwo))))),
               Container(
                   alignment: Alignment.center,
                   child: Text("NFT ${transaction.id.substring(0, 10)}",
                       style: TextStyle(
-                          color: service.style.textColor,
-                          fontSize: service.style.size(16)))),
+                          color: ColorProvider.tikiBlue,
+                          fontSize: SizeProvider.instance.size(16)))),
               SizedBox.fromSize(
-                  size: Size(service.style.size(40), service.style.size(40)))
+                  size: Size(SizeProvider.instance.size(40), SizeProvider.instance.size(40)))
             ]));
   }
 }

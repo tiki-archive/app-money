@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../../model/money_model_transaction.dart';
 import 'money_home_view_list_date.dart';
@@ -24,12 +25,7 @@ class MoneyHomeViewList extends StatelessWidget {
         opacity: example ? 0.5 : 1,
         child: Stack(children: [
           Align(
-              child: Image.asset(
-            'res/images/EXAMPLE.png',
-            package: 'money',
-            repeat: ImageRepeat.noRepeat,
-            alignment: Alignment.center,
-          )),
+              child: ImgProvider.example),
           SizedBox(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,

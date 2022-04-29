@@ -1,8 +1,9 @@
-name: money
+name: tiki_money
 description: Money sdk for Tiki app.
-version: 0.0.6
+version: 0.0.7
+homepage: https://mytiki.com
 repository: https://github.com/tiki/money
-publish_to: none # package in active development
+issue_tracker: https://github.com/tiki/money/issues
 
 environment:
   sdk: ">=2.15.1 <3.0.0"
@@ -11,33 +12,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  httpp:
-    git:
-      url: https://github.com/tiki/httpp
+  httpp: ^0.0.4
   logging: ^1.0.2
   provider: ^6.0.2
   intl: ^0.17.0
+  tiki_style: ^0.0.10
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^1.0.4
-
-flutter:
-  plugin:
-    platforms:
-      android:
-        package: com.mytiki.money
-        pluginClass: MoneyPlugin
-      ios:
-        pluginClass: MoneyPlugin
-  assets:
-    - res/images/
-  fonts:
-    - family: Koara
-      fonts:
-        - asset: res/fonts/Koara-Bold.ttf
-          weight: 700
-        - asset: res/fonts/Koara-Regular.ttf
-        - asset: res/fonts/Koara-Light.ttf
-          weight: 300
