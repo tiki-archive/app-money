@@ -4,7 +4,6 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:httpp/httpp.dart';
 import 'package:logging/logging.dart';
-import 'package:tiki_style/tiki_style.dart';
 
 import 'model/money_model.dart';
 import 'model/money_model_transaction.dart';
@@ -19,11 +18,10 @@ class MoneyService extends ChangeNotifier {
   late final MoneyModel model;
   late final MoneyPresenter presenter;
   late final MoneyController controller;
-  late final TikiStyle style;
   late final MoneySignupRepository moneySignupRepository;
 
   MoneyService(
-      {required this.style, required Httpp httpp, String? referalCode}) {
+      {required Httpp httpp, String? referalCode}) {
     presenter = MoneyPresenter(this);
     model = MoneyModel();
     controller = MoneyController(this);

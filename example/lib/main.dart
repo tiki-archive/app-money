@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:money/money.dart';
+import 'package:tiki_money/tiki_money.dart';
 import 'package:tiki_style/tiki_style.dart';
 
 void main() {
@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
             ),
             body: Builder(builder: (context) {
               TikiStyle.init(context);
-              return Money(referalCode: '\$001NZ').home(example: true);
+              return TikiMoney(referalCode: '\$001NZ').home(example: true);
               })));
   }
 

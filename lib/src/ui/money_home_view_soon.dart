@@ -21,14 +21,13 @@ class MoneyHomeViewSoon extends StatelessWidget {
               child: ImgProvider.infoIcon,
             width: SizeProvider.instance.text(18),
           ),
-          Container(
-              child: Text(
-                _text,
-                style: TextStyle(
-                    color: ColorProvider.tikiBlue,
-                    fontWeight: FontWeight.w800,
-                    fontSize: SizeProvider.instance.text(14)),
-              ))
+          Text(
+            _text,
+            style: TextStyle(
+                color: ColorProvider.tikiBlue,
+                fontWeight: FontWeight.w800,
+                fontSize: SizeProvider.instance.text(14)),
+          )
         ]);
   }
 }
