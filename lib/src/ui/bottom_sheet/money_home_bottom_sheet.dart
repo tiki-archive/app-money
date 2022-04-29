@@ -11,11 +11,11 @@ import 'money_home_view_header.dart';
 import 'money_home_view_list.dart';
 
 class MoneyHomeBottomSheet extends StatefulWidget {
-  final bool example;
+
   final List<MoneyModelTransaction> transactions;
 
   const MoneyHomeBottomSheet(
-      {Key? key, this.example = false, required this.transactions})
+      {Key? key, required this.transactions})
       : super(key: key);
 
   @override
@@ -68,7 +68,6 @@ class _MoneyBottomSheet extends State<MoneyHomeBottomSheet> {
                       const MoneyHomeViewHeader(),
                       MoneyHomeViewList(
                           transactions: widget.transactions,
-                          example: widget.example,
                           scrollController: _scrollController),
                     ])))));
   }

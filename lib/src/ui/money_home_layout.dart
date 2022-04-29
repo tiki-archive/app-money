@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
 
+import '../model/money_model_transaction.dart';
 import '../money_service.dart';
 import 'bottom_sheet/money_home_bottom_sheet.dart';
 import 'money_home_view_amount.dart';
@@ -11,9 +12,10 @@ import 'money_home_view_cash_out.dart';
 import 'money_home_view_soon.dart';
 
 class MoneyHomeLayout extends StatelessWidget {
-  final bool example;
 
-  const MoneyHomeLayout({Key? key, this.example = false}) : super(key: key);
+  final List<MoneyModelTransaction>? transactionList;
+
+  const MoneyHomeLayout({Key? key, this.transactionList}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +59,7 @@ class MoneyHomeLayout extends StatelessWidget {
                               Container(
                                   margin: EdgeInsets.only(
                                       right: SizeProvider.instance.size(15)),
-                                  child: const MoneyHomeViewAmount())
+                                  child: const MoneyHomeViewAmount(key: Key("MoneyHomeViewAmount")))
                             ],
                           ))
                     ])),
@@ -66,8 +68,7 @@ class MoneyHomeLayout extends StatelessWidget {
               ])),
           MoneyHomeBottomSheet(
               transactions:
-                  example ? service.generateList() : service.model.transactions,
-              example: example),
+                  transactionList != null ? transactionList! : service.model.transactions),
         ]));
   }
 }

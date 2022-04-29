@@ -12,9 +12,9 @@ class MoneyPresenter {
 
   MoneyPresenter(this.service);
 
-  ChangeNotifierProvider<MoneyService> home({bool example = false}) {
+  ChangeNotifierProvider<MoneyService> home({List<MoneyModelTransaction>? transactionList}) {
     return ChangeNotifierProvider.value(
-        value: service, child: MoneyHomeLayout(example: example));
+        value: service, child: MoneyHomeLayout(transactionList: transactionList));
   }
 
   Future<void> openDetail(

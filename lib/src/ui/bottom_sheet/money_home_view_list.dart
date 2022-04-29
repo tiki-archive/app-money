@@ -24,8 +24,8 @@ class MoneyHomeViewList extends StatelessWidget {
     return Opacity(
         opacity: example ? 0.5 : 1,
         child: Stack(children: [
-          Align(
-              child: ImgProvider.example),
+          /*Align(
+              child: ImgProvider.example),*/
           SizedBox(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
@@ -33,7 +33,7 @@ class MoneyHomeViewList extends StatelessWidget {
                   controller: scrollController,
                   itemCount: transactions.length,
                   itemBuilder: (context, index) {
-                    return Column(children: [
+                    return Column(key: Key("DataNFTsColumn"), children: [
                       MoneyHomeViewListDate(
                           current: transactions[index],
                           last: index > 0 ? transactions[index - 1] : null),
