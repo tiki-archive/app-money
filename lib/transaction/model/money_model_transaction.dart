@@ -1,7 +1,8 @@
+
 import 'money_model_transaction_type.dart';
 
-class MoneyModelTransaction{
-  late MoneyModelTransactionType type;
+class TransactionModel{
+  late TransactionType type;
   late String id;
   late DateTime minted;
   late DateTime? backedUp;
@@ -11,7 +12,7 @@ class MoneyModelTransaction{
   late String unit;
   late String ammount;
 
-  MoneyModelTransaction({
+  TransactionModel({
     required this.type,
     required this.id,
     required this.minted,

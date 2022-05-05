@@ -1,34 +1,7 @@
-import 'dart:convert';
-import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
-import 'package:httpp/httpp.dart';
-import 'package:logging/logging.dart';
 
-import 'model/money_model.dart';
-import 'model/money_model_transaction.dart';
-import 'model/money_model_transaction_type.dart';
-import 'container/money_controller.dart';
-import 'container/money_presenter.dart';
-import 'money_signup_repository.dart';
+class ListService extends ChangeNotifier{
 
-class MoneyService extends ChangeNotifier {
-  final Logger _log = Logger('MoneyService');
-
-  late final MoneyModel model;
-  late final MoneyPresenter presenter;
-  late final MoneyController controller;
-  late final MoneySignupRepository moneySignupRepository;
-
-  MoneyService(
-      {required Httpp httpp, String? referalCode}) {
-    presenter = MoneyPresenter(this);
-    model = MoneyModel();
-    controller = MoneyController(this);
-    if (referalCode != null) {
-      _getBalance(referalCode, httpp);
-    }
-  }
 
   List<MoneyModelTransaction> generateList() {
     DateTime lastDate = DateTime.now();
@@ -46,11 +19,11 @@ class MoneyService extends ChangeNotifier {
       lastDate = minted;
       DateTime? backed = index > 3
           ? minted.add(Duration(
-              seconds: index * Random().nextInt(Duration.secondsPerHour)))
+          seconds: index * Random().nextInt(Duration.secondsPerHour)))
           : null;
       DateTime? listed = index > 7
           ? backed?.add(Duration(
-              seconds: index * Random().nextInt(Duration.secondsPerHour)))
+          seconds: index * Random().nextInt(Duration.secondsPerHour)))
           : null;
       return MoneyModelTransaction(
           type: type,
@@ -65,12 +38,5 @@ class MoneyService extends ChangeNotifier {
           unit: units[Random().nextInt(100) % 2],
           ammount: "${Random().nextInt(10)}.${Random().nextInt(100)}");
     });
-  }
-
-  Future _getBalance(String referalCode, Httpp httpp) async {
-    await MoneySignupRepository.total(referalCode, httpp.client(), (count) {
-      model.balance = count != null ? 5.0 * (count ~/ 10.0) : 0;
-      notifyListeners();
-    }, (error) => _log.warning(error));
   }
 }

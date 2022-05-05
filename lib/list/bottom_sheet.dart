@@ -6,9 +6,9 @@
 import 'package:flutter/material.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-import '../transaction/money_model_transaction.dart';
-import 'money_home_view_header.dart';
-import 'money_home_view_list.dart';
+import '../transaction/model/money_model_transaction.dart';
+import 'header.dart';
+import 'list.dart';
 
 class MoneyHomeBottomSheet extends StatefulWidget {
   final bool example;

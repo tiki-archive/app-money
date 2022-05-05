@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:httpp/httpp.dart';
 
-class TikiMoney {
-  late final MoneyService _service;
+import 'container/service.dart';
 
-  TikiMoney({Httpp? httpp, required int referalCode})
-      : _service = MoneyService(
+class TikiMoney {
+  late final ContainerService _service;
+
+  TikiMoney({Httpp? httpp, required int referalCount})
+      : _service = ContainerService(
             httpp: httpp ?? Httpp(),
             referalCount: referalCount);
 

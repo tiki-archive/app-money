@@ -3,21 +3,21 @@ import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
 
 import '../money_service.dart';
-import 'bottom_sheet/money_home_bottom_sheet.dart';
+import 'bottom_sheet/bottom_sheet.dart';
 import 'money_home_view_amount.dart';
 import 'money_home_view_banner.dart';
 import 'money_home_view_card.dart';
 import 'money_home_view_cash_out.dart';
 import 'money_home_view_soon.dart';
 
-class MoneyHomeLayout extends StatelessWidget {
+class ContainerHomeLayout extends StatelessWidget {
   final bool example;
 
-  const MoneyHomeLayout({Key? key, this.example = false}) : super(key: key);
+  const ContainerHomeLayout({Key? key, this.example = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    MoneyService service = Provider.of<MoneyService>(context);
+    ContainerService service = Provider.of<ContainerService>(context);
     return SizedBox(
         height: double.infinity,
         child: Stack(children: [
@@ -42,8 +42,8 @@ class MoneyHomeLayout extends StatelessWidget {
                 ClipRRect(
                     borderRadius: BorderRadius.circular(SizeProvider.instance.size(15)),
                     child: Stack(children: [
-                      const MoneyHomeViewCard(),
-                      const MoneyHomeViewBanner(),
+                      const ContainerHomeViewCard(),
+                      const ContainerHomeViewBanner(),
                       Container(
                           margin: EdgeInsets.only(top: SizeProvider.instance.size(80)),
                           child: Row(
@@ -53,18 +53,18 @@ class MoneyHomeLayout extends StatelessWidget {
                               Container(
                                   margin: EdgeInsets.only(
                                       left: SizeProvider.instance.size(15)),
-                                  child: const MoneyHomeViewSoon()),
+                                  child: const ContainerHomeViewSoon()),
                               Container(
                                   margin: EdgeInsets.only(
                                       right: SizeProvider.instance.size(15)),
-                                  child: const MoneyHomeViewAmount())
+                                  child: const ContainerHomeViewAmount())
                             ],
                           ))
                     ])),
                 Padding(padding: EdgeInsets.only(top: SizeProvider.instance.size(20))),
-                const MoneyHomeViewCashOut()
+                const ContainerHomeViewCashOut()
               ])),
-          MoneyHomeBottomSheet(
+          ContainerHomeBottomSheet(
               transactions:
                   example ? service.generateList() : service.model.transactions,
               example: example),

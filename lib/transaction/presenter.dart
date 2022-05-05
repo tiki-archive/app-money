@@ -2,23 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-import '../../src/money_service.dart';
-import '../src/model/money_model_transaction.dart';
-import '../transaction/money_detail_layout.dart';
-import '../src/ui/money_home_layout.dart';
+import 'model/money_model_transaction.dart';
 
-class MoneyPresenter {
-  final MoneyService service;
-
-  MoneyPresenter(this.service);
-
-  ChangeNotifierProvider<MoneyService> home({bool example = false}) {
-    return ChangeNotifierProvider.value(
-        value: service, child: MoneyHomeLayout(example: example));
-  }
+class TransactionPresenter{
 
   Future<void> openDetail(
-      BuildContext context, MoneyModelTransaction transaction) {
+      BuildContext context, TransactionModel transaction) {
     return showModalBottomSheet<void>(
         context: context,
         isScrollControlled: true,
@@ -29,6 +18,8 @@ class MoneyPresenter {
                 top: Radius.circular(SizeProvider.instance.size(36)))),
         builder: (BuildContext context) => ChangeNotifierProvider.value(
             value: service,
-            child: MoneyDetailLayout(transaction: transaction)));
+            child: ContainerDetailLayout(transaction: transaction)));
   }
+
+
 }

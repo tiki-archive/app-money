@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-import '../transaction/money_model_transaction.dart';
-import 'money_home_view_list_date.dart';
-import 'money_home_view_list_transaction.dart';
+import '../transaction/model/money_model_transaction.dart';
+import 'list_date.dart';
+import '../transaction/ui/money_home_view_list_transaction.dart';
 
 class MoneyHomeViewList extends StatelessWidget {
   final bool example;

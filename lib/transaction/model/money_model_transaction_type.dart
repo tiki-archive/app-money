@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-enum MoneyModelTransactionType{
+enum TransactionType{
   subject,
   zipcode
 }
 
-extension MoneyModelTransactionTypeExt on MoneyModelTransactionType{
+extension TransactionTypeExt on TransactionType{
   String asString() {
     String name = toString()
         .split('.')
@@ -16,9 +16,9 @@ extension MoneyModelTransactionTypeExt on MoneyModelTransactionType{
 
   IconData get icon {
     switch(this){
-      case MoneyModelTransactionType.subject:
+      case TransactionType.subject:
         return IconProvider.email_outline;
-      case MoneyModelTransactionType.zipcode:
+      case TransactionType.zipcode:
         return IconProvider.location;
     }
   }
