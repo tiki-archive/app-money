@@ -1,4 +1,4 @@
-import 'money_model_transaction.dart';
+import '../transaction/money_model_transaction.dart';
 
 class MoneyModel{
   DateTime start = DateTime.now().subtract(const Duration(days:7));

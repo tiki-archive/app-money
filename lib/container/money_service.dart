@@ -8,8 +8,8 @@ import 'package:logging/logging.dart';
 import 'model/money_model.dart';
 import 'model/money_model_transaction.dart';
 import 'model/money_model_transaction_type.dart';
-import 'money_controller.dart';
-import 'money_presenter.dart';
+import 'container/money_controller.dart';
+import 'container/money_presenter.dart';
 import 'money_signup_repository.dart';
 
 class MoneyService extends ChangeNotifier {

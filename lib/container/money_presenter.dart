@@ -3,9 +3,9 @@ import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
 
 import '../../src/money_service.dart';
-import 'model/money_model_transaction.dart';
-import 'ui/detail/money_detail_layout.dart';
-import 'ui/money_home_layout.dart';
+import '../src/model/money_model_transaction.dart';
+import '../transaction/money_detail_layout.dart';
+import '../src/ui/money_home_layout.dart';
 
 class MoneyPresenter {
   final MoneyService service;

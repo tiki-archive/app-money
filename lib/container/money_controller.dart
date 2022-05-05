@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
-import 'model/money_model_transaction.dart';
-import 'money_service.dart';
+import '../src/model/money_model_transaction.dart';
+import '../src/money_service.dart';
 
 class MoneyController {
   final MoneyService service;

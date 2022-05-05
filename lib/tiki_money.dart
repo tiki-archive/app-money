@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:httpp/httpp.dart';
-import 'package:tiki_style/tiki_style.dart';
-
-import 'src/money_service.dart';
 
 class TikiMoney {
   late final MoneyService _service;
 
-  TikiMoney({Httpp? httpp, String? referalCode})
+  TikiMoney({Httpp? httpp, required int referalCode})
       : _service = MoneyService(
             httpp: httpp ?? Httpp(),
-            referalCode: referalCode);
+            referalCount: referalCount);
 
   Widget home({bool example = false}) =>
       _service.presenter.home(example: example);

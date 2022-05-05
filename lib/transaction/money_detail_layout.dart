@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-import '../../model/money_model_transaction.dart';
-import 'money_detail_view_content_header.dart';
+import '../src/model/money_model_transaction.dart';
+import '../src/ui/detail/money_detail_view_content_header.dart';
 import 'money_detail_view_content_table.dart';
-import 'money_detail_view_header.dart';
+import '../src/ui/detail/money_detail_view_header.dart';
 
 class MoneyDetailLayout extends StatelessWidget {
   final MoneyModelTransaction transaction;

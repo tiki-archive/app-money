@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-import '../../model/money_model_transaction.dart';
+import 'money_model_transaction.dart';
 
 class MoneyDetailViewHeader extends StatelessWidget {
   final MoneyModelTransaction transaction;
