@@ -6,15 +6,15 @@ import '../model/money_model_transaction.dart';
 import '../model/money_model_transaction_type.dart';
 import '../service.dart';
 
-class ListTransaction extends StatelessWidget {
-  final TransactionModel transaction;
+class MoneyTransactionItem extends StatelessWidget {
 
-  const ListTransaction({Key? key, required this.transaction})
+  const MoneyTransactionItem({Key? key})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     TransactionService service = Provider.of<TransactionService>(context);
+    TransactionModel transaction = service.transaction;
     return GestureDetector(
       child: Padding(
           padding: EdgeInsets.symmetric(vertical: SizeProvider.instance.size(10)),
@@ -55,7 +55,7 @@ class ListTransaction extends StatelessWidget {
                       style: TextStyle(fontSize: SizeProvider.instance.text(18)))),
             ],
           )),
-      onTap: () => service.controller.openDetail(context, transaction),
+      onTap: () => service.controller.openDetail(context),
       behavior: HitTestBehavior.opaque,
     );
   }

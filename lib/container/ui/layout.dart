@@ -63,7 +63,7 @@ class MoneyContainerUiLayout extends StatelessWidget {
                 Padding(padding: EdgeInsets.only(top: SizeProvider.instance.size(20))),
                 const MoneyContainerUiCashOut()
               ])),
-          service.statement.presenter.bottomSheet()
+          service.statement.presenter.bottomSheet(example:example)
         ]));
   }
 }

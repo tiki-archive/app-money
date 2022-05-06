@@ -11,6 +11,7 @@ class TikiMoney {
             httpp: httpp ?? Httpp(),
             referalCount: referalCount);
 
-  Widget home({bool example = false}) =>
+  Widget screen({bool example = false}) =>
       _service.presenter.home(example: example);
+
 }

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'model/money_model_transaction.dart';
-
 import 'service.dart';
 
 class TransactionController{
@@ -9,5 +7,5 @@ class TransactionController{
 
   TransactionController(this.service);
 
-  openDetail(BuildContext context, TransactionModel transaction) {}
+  Future<void> openDetail(BuildContext context) => service.presenter.openDetail(context);
 }

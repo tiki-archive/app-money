@@ -5,19 +5,24 @@ import 'package:flutter/cupertino.dart';
 
 import '../transaction/model/money_model_transaction.dart';
 import '../transaction/model/money_model_transaction_type.dart';
+import 'model.dart';
 import 'presenter.dart';
 
 class StatementService extends ChangeNotifier{
 
   late final StatementPresenter presenter;
+  late final StatementModel _model;
 
   StatementService() {
     presenter = StatementPresenter(this);
+    _model = StatementModel();
   }
 
-  List<TransactionModel> getTransactions() {
+  List<TransactionModel> get transactions => _model.transactions;
+
+  void getTransactions() {
     DateTime lastDate = DateTime.now();
-    return List.generate(100, (index) {
+    _model.transactions = List.generate(100, (index) {
       List<String> units = ['μ¢', 'n¢'];
       TransactionType type = TransactionType.values[Random().nextInt(TransactionType.values.length)];
       String id = '0x' +
@@ -49,5 +54,6 @@ class StatementService extends ChangeNotifier{
           unit: units[Random().nextInt(100) % 2],
           ammount: "${Random().nextInt(10)}.${Random().nextInt(100)}");
     });
+    notifyListeners();
   }
 }

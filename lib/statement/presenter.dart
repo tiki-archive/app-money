@@ -9,6 +9,8 @@ class StatementPresenter{
 
   StatementPresenter(this.service);
 
-  Widget bottomSheet() =>
-      ChangeNotifierProvider.value(value: service, child: const StatementBottomSheet());
+  Widget bottomSheet({bool example = false}) =>
+      ChangeNotifierProvider.value(
+          value: service,
+          child: StatementBottomSheet(example: example));
 }

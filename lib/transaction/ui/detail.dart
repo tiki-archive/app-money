@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
 
 import '../model/money_model_transaction.dart';
+import '../service.dart';
 import 'content_header.dart';
 import 'detail_table.dart';
 import 'header.dart';
 
 class MoneyTransactionUiDetail extends StatelessWidget {
-  final TransactionModel transaction;
 
-  const MoneyTransactionUiDetail({Key? key, required this.transaction})
+  const MoneyTransactionUiDetail({Key? key})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    TransactionService service = Provider.of<TransactionService>(context);
+    TransactionModel transaction = service.transaction;
     return SizedBox(
         height: MediaQuery.of(context).size.height * 0.85,
         child: Column(mainAxisSize: MainAxisSize.min, children: [

@@ -10,8 +10,9 @@ import 'header.dart';
 import 'list.dart';
 
 class StatementBottomSheet extends StatefulWidget {
+  final bool example;
 
-  const StatementBottomSheet({Key? key}) : super(key: key);
+  const StatementBottomSheet({Key? key, this.example = false}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _StatementBottomSheet();
@@ -62,6 +63,7 @@ class _StatementBottomSheet extends State<StatementBottomSheet> {
                               ))),
                       const StatementUiHeader(),
                       StatementList(
+                          example: widget.example,
                           scrollController: _scrollController),
                     ])))));
   }

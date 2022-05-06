@@ -3,9 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
 
 import '../../transaction/model/money_model_transaction.dart';
-import '../../transaction/ui/transaction.dart';
 import '../service.dart';
-import 'list_date.dart';
+import 'list_item.dart';
 
 class StatementList extends StatelessWidget {
   final bool example;
@@ -22,27 +21,22 @@ class StatementList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     StatementService service = Provider.of<StatementService>(context);
-    List<TransactionModel> transactions = service.getTransactions();
+    List<TransactionModel> transactions = service.transactions;
     return Opacity(
         opacity: example ? 0.5 : 1,
         child: Stack(children: [
-          Align(
-              child: ImgProvider.example),
+          example ? Align(child: ImgProvider.example) : Container(),
           SizedBox(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               child: ListView.builder(
                   controller: scrollController,
                   itemCount: transactions.length,
-                  itemBuilder: (context, index) {
-                    return Column(children: [
-                      ListDate(
-                          current: transactions[index],
-                          last: index > 0 ? transactions[index - 1] : null),
-                      ListTransaction(
-                          transaction: transactions[index])
-                    ]);
-                  }))
+                  itemBuilder: (context, index) =>
+                    StatementListItem(
+                      current : transactions[index],
+                      previous : index > 0 ? transactions[index - 1] : null)
+                    ))
         ]));
   }
 }

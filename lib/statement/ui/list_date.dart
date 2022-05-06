@@ -5,19 +5,19 @@ import '../../transaction/model/money_model_transaction.dart';
 
 class ListDate extends StatelessWidget {
   final TransactionModel current;
-  final TransactionModel? last;
+  final TransactionModel? previous;
 
-  const ListDate({Key? key, required this.current, this.last})
+  const ListDate({Key? key, required this.current, this.previous})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return last == null
+    return previous == null
         ? Container(
             padding: const EdgeInsets.only(left: 10, top: 10),
             width: double.infinity,
             child: Text(_getDateString(current.minted).toUpperCase()))
-        : current.minted.day != last!.minted.day
+        : current.minted.day != previous!.minted.day
             ? Container(
                 padding: const EdgeInsets.only(left: 10, top: 10),
                 width: double.infinity,
