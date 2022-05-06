@@ -4,7 +4,7 @@ import 'package:tiki_style/tiki_style.dart';
 import '../model/money_model_transaction.dart';
 
 class MoneyDetailViewHeader extends StatelessWidget {
-  final MoneyModelTransaction transaction;
+  final TransactionModel transaction;
 
   const MoneyDetailViewHeader({Key? key, required this.transaction})
       : super(key: key);

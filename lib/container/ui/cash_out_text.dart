@@ -5,11 +5,11 @@
 import 'package:flutter/material.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-class ContainerHomeViewCashOutText extends StatelessWidget {
+class MoneyContainerUiCashOutText extends StatelessWidget {
   static const String _text =
       "Sell your data & cash out your \nearnings to your bank account";
 
-  const ContainerHomeViewCashOutText({Key? key}) : super(key: key);
+  const MoneyContainerUiCashOutText({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -2,18 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-import '../money_service.dart';
-import 'bottom_sheet/bottom_sheet.dart';
-import 'money_home_view_amount.dart';
-import 'money_home_view_banner.dart';
-import 'money_home_view_card.dart';
-import 'money_home_view_cash_out.dart';
-import 'money_home_view_soon.dart';
+import '../service.dart';
+import 'amount.dart';
+import 'banner.dart';
+import 'card.dart';
+import 'cash_out.dart';
+import 'soon.dart';
 
-class ContainerHomeLayout extends StatelessWidget {
+class MoneyContainerUiLayout extends StatelessWidget {
   final bool example;
 
-  const ContainerHomeLayout({Key? key, this.example = false}) : super(key: key);
+  const MoneyContainerUiLayout({Key? key, this.example = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +41,8 @@ class ContainerHomeLayout extends StatelessWidget {
                 ClipRRect(
                     borderRadius: BorderRadius.circular(SizeProvider.instance.size(15)),
                     child: Stack(children: [
-                      const ContainerHomeViewCard(),
-                      const ContainerHomeViewBanner(),
+                      const MoneyContainerUiCard(),
+                      const MoneyContainerUiBanner(),
                       Container(
                           margin: EdgeInsets.only(top: SizeProvider.instance.size(80)),
                           child: Row(
@@ -53,21 +52,18 @@ class ContainerHomeLayout extends StatelessWidget {
                               Container(
                                   margin: EdgeInsets.only(
                                       left: SizeProvider.instance.size(15)),
-                                  child: const ContainerHomeViewSoon()),
+                                  child: const MoneyContainerUiSoon()),
                               Container(
                                   margin: EdgeInsets.only(
                                       right: SizeProvider.instance.size(15)),
-                                  child: const ContainerHomeViewAmount())
+                                  child: const MoneyContainerUiAmount())
                             ],
                           ))
                     ])),
                 Padding(padding: EdgeInsets.only(top: SizeProvider.instance.size(20))),
-                const ContainerHomeViewCashOut()
+                const MoneyContainerUiCashOut()
               ])),
-          ContainerHomeBottomSheet(
-              transactions:
-                  example ? service.generateList() : service.model.transactions,
-              example: example),
+          service.statement.presenter.bottomSheet()
         ]));
   }
 }

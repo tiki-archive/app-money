@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-import '../../src/model/money_model_transaction.dart';
+import '../model/money_model_transaction.dart';
 
-class MoneyDetailViewContentTable extends StatelessWidget {
-  final MoneyModelTransaction transaction;
 
-  const MoneyDetailViewContentTable({Key? key, required this.transaction})
+class MoneyTransactionUiTable extends StatelessWidget {
+  final TransactionModel transaction;
+
+  const MoneyTransactionUiTable({Key? key, required this.transaction})
       : super(key: key);
 
   @override

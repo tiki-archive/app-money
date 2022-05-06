@@ -1,0 +1,14 @@
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'service.dart';
+import 'ui/bottom_sheet.dart';
+
+class StatementPresenter{
+  final StatementService service;
+
+  StatementPresenter(this.service);
+
+  Widget bottomSheet() =>
+      ChangeNotifierProvider.value(value: service, child: const StatementBottomSheet());
+}

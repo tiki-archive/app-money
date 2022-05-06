@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-import '../../src/model/money_model_transaction.dart';
-import '../../src/ui/detail/money_detail_view_content_header.dart';
-import 'money_detail_view_content_table.dart';
-import '../../src/ui/detail/money_detail_view_header.dart';
+import '../model/money_model_transaction.dart';
+import 'content_header.dart';
+import 'detail_table.dart';
+import 'header.dart';
 
-class MoneyDetailLayout extends StatelessWidget {
-  final MoneyModelTransaction transaction;
+class MoneyTransactionUiDetail extends StatelessWidget {
+  final TransactionModel transaction;
 
-  const MoneyDetailLayout({Key? key, required this.transaction})
+  const MoneyTransactionUiDetail({Key? key, required this.transaction})
       : super(key: key);
 
   @override
@@ -25,10 +25,10 @@ class MoneyDetailLayout extends StatelessWidget {
                       right: SizeProvider.instance.size(25),
                       bottom: SizeProvider.instance.size(16)),
                   child: Column(children: [
-                    MoneyDetailViewContentHeader(transaction: transaction),
+                    MoneyTransactionUiHeader(transaction: transaction),
                     Expanded(
                         child: Center(
-                            child: MoneyDetailViewContentTable(
+                            child: MoneyTransactionUiTable(
                                 transaction: transaction)))
                   ])))
         ]));

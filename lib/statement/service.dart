@@ -1,14 +1,25 @@
+import 'dart:convert';
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 
-class ListService extends ChangeNotifier{
+import '../transaction/model/money_model_transaction.dart';
+import '../transaction/model/money_model_transaction_type.dart';
+import 'presenter.dart';
 
+class StatementService extends ChangeNotifier{
 
-  List<MoneyModelTransaction> generateList() {
+  late final StatementPresenter presenter;
+
+  StatementService() {
+    presenter = StatementPresenter(this);
+  }
+
+  List<TransactionModel> getTransactions() {
     DateTime lastDate = DateTime.now();
     return List.generate(100, (index) {
       List<String> units = ['μ¢', 'n¢'];
-      MoneyModelTransactionType type = MoneyModelTransactionType
-          .values[Random().nextInt(MoneyModelTransactionType.values.length)];
+      TransactionType type = TransactionType.values[Random().nextInt(TransactionType.values.length)];
       String id = '0x' +
           base64Url.encode(
               List<int>.generate(32, (i) => Random.secure().nextInt(256)));
@@ -25,14 +36,14 @@ class ListService extends ChangeNotifier{
           ? backed?.add(Duration(
           seconds: index * Random().nextInt(Duration.secondsPerHour)))
           : null;
-      return MoneyModelTransaction(
+      return TransactionModel(
           type: type,
           id: id,
           minted: minted,
           backedUp: backed,
           listedOn: listed,
           fingerprint: fingerprint,
-          subject: type == MoneyModelTransactionType.subject
+          subject: type == TransactionType.subject
               ? 'Build & embed ML models into edge devices? Do it for free!'
               : Random().nextInt(99999).toString().padLeft(5, '1'),
           unit: units[Random().nextInt(100) % 2],

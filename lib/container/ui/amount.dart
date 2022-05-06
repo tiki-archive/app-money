@@ -7,17 +7,17 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-import '../money_service.dart';
+import '../service.dart';
 
-class ContainerHomeViewAmount extends StatelessWidget {
+class MoneyContainerUiAmount extends StatelessWidget {
   static const String _text = "your balance";
 
-  const ContainerHomeViewAmount({Key? key}) : super(key: key);
+  const MoneyContainerUiAmount({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     ContainerService service = Provider.of<ContainerService>(context);
-    double balance = service.model.balance;
+    double balance = service.balance;
     return Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.end,

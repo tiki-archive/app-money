@@ -6,23 +6,18 @@
 import 'package:flutter/material.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-import '../transaction/model/money_model_transaction.dart';
 import 'header.dart';
 import 'list.dart';
 
-class MoneyHomeBottomSheet extends StatefulWidget {
-  final bool example;
-  final List<MoneyModelTransaction> transactions;
+class StatementBottomSheet extends StatefulWidget {
 
-  const MoneyHomeBottomSheet(
-      {Key? key, this.example = false, required this.transactions})
-      : super(key: key);
+  const StatementBottomSheet({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _MoneyBottomSheet();
+  State<StatefulWidget> createState() => _StatementBottomSheet();
 }
 
-class _MoneyBottomSheet extends State<MoneyHomeBottomSheet> {
+class _StatementBottomSheet extends State<StatementBottomSheet> {
   late ScrollController _scrollController;
   double heightFactor = 0.70;
   bool collapsed = true;
@@ -65,10 +60,8 @@ class _MoneyBottomSheet extends State<MoneyHomeBottomSheet> {
                                   color: ColorProvider.greyTwo,
                                   size: SizeProvider.instance.text(20)
                               ))),
-                      const MoneyHomeViewHeader(),
-                      MoneyHomeViewList(
-                          transactions: widget.transactions,
-                          example: widget.example,
+                      const StatementUiHeader(),
+                      StatementList(
                           scrollController: _scrollController),
                     ])))));
   }

@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-import '../transaction/model/money_model_transaction.dart';
-import '../transaction/money_model_transaction_type.dart';
-import '../money_service.dart';
+import '../model/money_model_transaction.dart';
+import '../model/money_model_transaction_type.dart';
+import '../service.dart';
 
-class MoneyHomeViewListTransaction extends StatelessWidget {
-  final MoneyModelTransaction transaction;
+class ListTransaction extends StatelessWidget {
+  final TransactionModel transaction;
 
-  const MoneyHomeViewListTransaction({Key? key, required this.transaction})
+  const ListTransaction({Key? key, required this.transaction})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    MoneyService service = Provider.of<MoneyService>(context);
+    TransactionService service = Provider.of<TransactionService>(context);
     return GestureDetector(
       child: Padding(
           padding: EdgeInsets.symmetric(vertical: SizeProvider.instance.size(10)),

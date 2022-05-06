@@ -6,12 +6,12 @@
 import 'package:flutter/material.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-import 'money_home_view_cash_out_banner.dart';
-import 'money_home_view_cash_out_icon.dart';
-import 'money_home_view_cash_out_text.dart';
+import 'cash_out_banner.dart';
+import 'cash_out_icon.dart';
+import 'cash_out_text.dart';
 
-class ContainerHomeViewCashOut extends StatelessWidget {
-  const ContainerHomeViewCashOut({Key? key}) : super(key: key);
+class MoneyContainerUiCashOut extends StatelessWidget {
+  const MoneyContainerUiCashOut({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,17 +29,17 @@ class ContainerHomeViewCashOut extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const ContainerHomeViewCashOutBanner(),
+                    const MoneyContainerUiCashOutBanner(),
                     Container(
                         margin: EdgeInsets.only(
                             left: SizeProvider.instance.size(20),
                             top: SizeProvider.instance.size(8)),
-                        child: const ContainerHomeViewCashOutText())
+                        child: const MoneyContainerUiCashOutText())
                   ],
                 ),
                 Container(
                     margin: EdgeInsets.only(right: SizeProvider.instance.size(15)),
-                    child: const ContainerHomeViewCashOutIcon())
+                    child: const MoneyContainerUiCashOutIcon())
               ],
             )));
   }

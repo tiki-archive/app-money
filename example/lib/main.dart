@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
             ),
             body: Builder(builder: (context) {
               TikiStyle.init(context);
-              return TikiMoney(referalCode: '\$001NZ').home(example: true);
+              return TikiMoney(referalCount: 10).home(example: true);
               })));
   }
 

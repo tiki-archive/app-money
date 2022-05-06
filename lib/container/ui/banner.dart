@@ -6,8 +6,8 @@
 import 'package:flutter/material.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-class ContainerHomeViewBanner extends StatelessWidget {
-  const ContainerHomeViewBanner({Key? key}) : super(key: key);
+class MoneyContainerUiBanner extends StatelessWidget {
+  const MoneyContainerUiBanner({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

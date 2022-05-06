@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tiki_style/tiki_style.dart';
 
 
-class MoneyHomeViewHeader extends StatelessWidget {
+class StatementUiHeader extends StatelessWidget {
   final String _title = "Data NFTs are on the way!";
   final String _text = '''
 We have a few technical i’s to dot and t’s 
@@ -11,7 +11,7 @@ Keep your 👀 peeled, your data NFTs will
 start showing up in a couple weeks.
 ''';
 
-  const MoneyHomeViewHeader({Key? key}) : super(key: key);
+  const StatementUiHeader({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

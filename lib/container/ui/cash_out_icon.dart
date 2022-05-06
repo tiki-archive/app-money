@@ -5,10 +5,10 @@
 import 'package:flutter/material.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-class ContainerHomeViewCashOutIcon extends StatelessWidget {
+class MoneyContainerUiCashOutIcon extends StatelessWidget {
   static const String _text = "Cash out";
 
-  const ContainerHomeViewCashOutIcon({Key? key}) : super(key: key);
+  const MoneyContainerUiCashOutIcon({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -3,8 +3,13 @@ import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
 
 import 'model/money_model_transaction.dart';
+import 'service.dart';
+import 'ui/detail.dart';
 
 class TransactionPresenter{
+
+  final TransactionService service;
+  TransactionPresenter(this.service);
 
   Future<void> openDetail(
       BuildContext context, TransactionModel transaction) {
@@ -18,7 +23,7 @@ class TransactionPresenter{
                 top: Radius.circular(SizeProvider.instance.size(36)))),
         builder: (BuildContext context) => ChangeNotifierProvider.value(
             value: service,
-            child: ContainerDetailLayout(transaction: transaction)));
+            child: MoneyTransactionUiDetail(transaction: transaction)));
   }
 
 

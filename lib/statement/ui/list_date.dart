@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../transaction/model/money_model_transaction.dart';
+import '../../transaction/model/money_model_transaction.dart';
 
-class MoneyHomeViewListDate extends StatelessWidget {
-  final MoneyModelTransaction current;
-  final MoneyModelTransaction? last;
+class ListDate extends StatelessWidget {
+  final TransactionModel current;
+  final TransactionModel? last;
 
-  const MoneyHomeViewListDate({Key? key, required this.current, this.last})
+  const ListDate({Key? key, required this.current, this.last})
       : super(key: key);
 
   @override

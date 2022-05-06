@@ -6,10 +6,10 @@
 import 'package:flutter/material.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-class ContainerHomeViewSoon extends StatelessWidget {
+class MoneyContainerUiSoon extends StatelessWidget {
   static const String _text = "You’ll be able to \nsell your data soon";
 
-  const ContainerHomeViewSoon({Key? key}) : super(key: key);
+  const MoneyContainerUiSoon({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
