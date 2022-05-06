@@ -18,9 +18,10 @@ class StatementService extends ChangeNotifier{
 
   void pushTransactions(List<TransactionModel> transactions, {required bool overwrite}) {
     if(!overwrite){
-      _model.transactions.addAll(transactions);
+      _model.transactions = [...transactions, ..._model.transactions];
     }else{
       _model.transactions = transactions;
     }
+    notifyListeners();
   }
 }
