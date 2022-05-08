@@ -1,3 +1,7 @@
+## 0.0.8
+
+* bump tiki_style version
+
 ## 0.0.7
 
 * publish to pub
