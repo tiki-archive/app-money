@@ -30,7 +30,7 @@ start showing up in a couple weeks.
                 textAlign: TextAlign.start,
                 style: TextStyle(
                     fontFamily: TextProvider.familyKoara,
-                    package: 'style',
+                    package: 'tiki_style',
                     color: ColorProvider.tikiBlue,
                     fontSize: SizeProvider.instance.text(18),
                     fontWeight: FontWeight.bold),

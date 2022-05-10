@@ -15,7 +15,7 @@ class MoneyContainerUiCashOutBanner extends StatelessWidget {
     return Stack(
       children: [
         SizedBox(
-          child: ImgProvider.walletBanner,
+          child: ImgProvider.bannerCyan,
           height: SizeProvider.instance.size(25),
         ),
         Container(

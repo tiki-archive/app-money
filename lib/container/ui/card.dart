@@ -10,13 +10,9 @@ class MoneyContainerUiCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width,
-      height: SizeProvider.instance.height(215),
-      child: FittedBox(
-        fit: BoxFit.cover,
+    return FittedBox(
+        fit: BoxFit.fitWidth,
         child: ImgProvider.walletCard,
-      )
     );
   }
 }

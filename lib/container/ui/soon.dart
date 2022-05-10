@@ -18,14 +18,16 @@ class MoneyContainerUiSoon extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-              child: ImgProvider.infoIcon,
+              child: ImgProvider.iconInfo,
             width: SizeProvider.instance.text(18),
           ),
           Text(
             _text,
             style: TextStyle(
+                fontFamily: TextProvider.familyNunitoSans,
+                package: 'tiki_style',
                 color: ColorProvider.tikiBlue,
-                fontWeight: FontWeight.w800,
+                fontWeight: FontWeight.w700,
                 fontSize: SizeProvider.instance.text(14)),
           )
         ]);
