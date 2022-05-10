@@ -23,13 +23,15 @@ class MoneyContainerUiSoonCard extends StatelessWidget {
           ],
         ),
         width: SizeProvider.instance.width(320),
-        height: SizeProvider.instance.height(215),
+        height: SizeProvider.instance.height(207),
 
         child: Stack(children: [
         const MoneyContainerUiCard(),
         const MoneyContainerUiBanner(),
         Container(
-            padding: EdgeInsets.symmetric(horizontal: SizeProvider.instance.width(18)),
+            padding: EdgeInsets.symmetric(
+                vertical: SizeProvider.instance.width(73),
+                horizontal: SizeProvider.instance.width(18)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,

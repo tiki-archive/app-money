@@ -31,7 +31,7 @@ class MoneyContainerUiAmount extends StatelessWidget {
                 package: 'tiki_style',
                 fontWeight: FontWeight.bold,
                 height: 0,
-                fontSize: SizeProvider.instance.text(64)),
+                fontSize: SizeProvider.instance.text(80)),
           ),
           Container(
               margin: EdgeInsets.only(top: SizeProvider.instance.size(16)),
@@ -43,7 +43,7 @@ class MoneyContainerUiAmount extends StatelessWidget {
                     fontFamily: TextProvider.familyKoara,
                     package: 'tiki_style',
                     fontWeight: FontWeight.bold,
-                    fontSize: SizeProvider.instance.text(12)),
+                    fontSize: SizeProvider.instance.text(16)),
               ))
         ]);
   }

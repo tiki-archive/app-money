@@ -18,7 +18,10 @@ class MoneyContainerUiCashOutText extends StatelessWidget {
       style: TextStyle(
           color: ColorProvider.tikiBlue,
           fontWeight: FontWeight.w600,
-          fontSize: SizeProvider.instance.text(12)),
+          fontFamily: TextProvider.familyNunitoSans,
+          height: 1.1 ,
+          package:'tiki_style',
+          fontSize: SizeProvider.instance.text(14)),
     );
   }
 }

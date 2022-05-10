@@ -19,18 +19,11 @@ class MoneyContainerUiCashOutIcon extends StatelessWidget {
         Stack(
           children: [
             Container(
-              padding: EdgeInsets.all(SizeProvider.instance.size(12)),
+              width: 44,
+              height: 44,
               decoration: BoxDecoration(
                   color: ColorProvider.greyFour,
-                  borderRadius: BorderRadius.circular(SizeProvider.instance.size(60)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: const Color(0x0D000000),
-                      blurRadius: SizeProvider.instance.size(4),
-                      offset: Offset(SizeProvider.instance.size(2),
-                          SizeProvider.instance.size(2)), // Shadow position
-                    ),
-                  ]),
+                  borderRadius: BorderRadius.circular(SizeProvider.instance.size(30))),
               child: const Center(
                   child: Icon(IconProvider.upload, color: ColorProvider.white),
             ))
@@ -41,8 +34,10 @@ class MoneyContainerUiCashOutIcon extends StatelessWidget {
             child: Text(
               _text,
               style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: SizeProvider.instance.text(12),
+                  fontWeight: FontWeight.w700,
+                  fontFamily: TextProvider.familyNunitoSans,
+                  package: 'tiki_style',
+                  fontSize: SizeProvider.instance.text(15),
                   color: ColorProvider.greyFour),
             ))
       ],

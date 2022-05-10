@@ -18,14 +18,13 @@ class MoneyContainerUiLayout extends StatelessWidget {
         height: double.infinity,
         child: Stack(children: [
           Container(
+              width: MediaQuery.of(context).size.width,
               padding: EdgeInsets.only(
-                  top: SizeProvider.instance.size(8),
-                  right: SizeProvider.instance.size(18),
-                  left: SizeProvider.instance.size(18)),
+                  top: SizeProvider.instance.size(8)),
               child: Column(children: [
                 MoneyContainerUiSoonCard(),
-                Padding(padding: EdgeInsets.only(top: SizeProvider.instance.size(10))),
-                const MoneyContainerUiCashOut()
+                Padding(padding: EdgeInsets.only(top: SizeProvider.instance.size(20))),
+                MoneyContainerUiCashOut()
               ])),
           service.statement.presenter.bottomSheet(example:example)
         ]));

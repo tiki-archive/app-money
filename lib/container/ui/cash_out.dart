@@ -16,12 +16,14 @@ class MoneyContainerUiCashOut extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+        height: SizeProvider.instance.height(110),
+        width:  SizeProvider.instance.height(320),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(SizeProvider.instance.size(12)),
+          borderRadius: BorderRadius.circular(SizeProvider.instance.size(22)),
         ),
         child: Padding(
-            padding: EdgeInsets.symmetric(vertical: SizeProvider.instance.size(8)),
+            padding: EdgeInsets.symmetric(vertical: SizeProvider.instance.size(17)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -32,13 +34,13 @@ class MoneyContainerUiCashOut extends StatelessWidget {
                     const MoneyContainerUiCashOutBanner(),
                     Container(
                         margin: EdgeInsets.only(
-                            left: SizeProvider.instance.size(20),
-                            top: SizeProvider.instance.size(8)),
+                            left: SizeProvider.instance.size(12),
+                            top: SizeProvider.instance.size(12)),
                         child: const MoneyContainerUiCashOutText())
                   ],
                 ),
                 Container(
-                    margin: EdgeInsets.only(right: SizeProvider.instance.size(15)),
+                    margin: EdgeInsets.only(right: SizeProvider.instance.size(30)),
                     child: const MoneyContainerUiCashOutIcon())
               ],
             )));

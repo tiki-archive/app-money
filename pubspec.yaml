@@ -16,7 +16,8 @@ dependencies:
   logging: ^1.0.2
   provider: ^6.0.2
   intl: ^0.17.0
-  tiki_style: ^0.0.14
+  tiki_style:
+    path: ../style
 
 dev_dependencies:
   flutter_test:
