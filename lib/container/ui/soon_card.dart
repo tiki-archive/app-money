@@ -8,6 +8,8 @@ import 'banner.dart';
 import 'card.dart';
 
 class MoneyContainerUiSoonCard extends StatelessWidget {
+  const MoneyContainerUiSoonCard({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
