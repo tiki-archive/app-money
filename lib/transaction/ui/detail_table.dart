@@ -8,7 +8,13 @@ import '../model/money_model_transaction.dart';
 class MoneyTransactionUiTable extends StatelessWidget {
   final TransactionModel transaction;
 
-  const MoneyTransactionUiTable({Key? key, required this.transaction})
+  final TextStyle _textStyle = TextStyle(
+      fontFamily: TextProvider.familyNunitoSans,
+      fontSize: SizeProvider.instance.height(13),
+      package: 'tiki_style',
+      color: ColorProvider.tikiBlue);
+
+   MoneyTransactionUiTable({Key? key, required this.transaction})
       : super(key: key);
 
   @override
@@ -23,7 +29,7 @@ class MoneyTransactionUiTable extends StatelessWidget {
         child: Table(
           columnWidths: <int, TableColumnWidth>{
             0: FixedColumnWidth(SizeProvider.instance.size(90)),
-            1: const FlexColumnWidth(),
+            1:  FlexColumnWidth(),
           },
           defaultVerticalAlignment: TableCellVerticalAlignment.middle,
           border: TableBorder.symmetric(
@@ -32,24 +38,25 @@ class MoneyTransactionUiTable extends StatelessWidget {
                   color: ColorProvider.tikiBlue)),
           children: [
             TableRow(children: [
-              const TableCell(
+              TableCell(
                   child: Text(
                 "ID (Hash)",
                 textAlign: TextAlign.center,
-              )),
+                style: _textStyle)
+              ),
               TableCell(
                   child: Padding(
                       padding: EdgeInsets.only(
                           left: SizeProvider.instance.size(8),
                           top: SizeProvider.instance.size(8),
                           bottom: SizeProvider.instance.size(8)),
-                      child: Text(transaction.id.substring(0, 10)))),
+                      child: Text(transaction.id.substring(0, 10), style: _textStyle))),
             ]),
             TableRow(children: [
-              const TableCell(
+               TableCell(
                   child: Text(
                 "Minted",
-                textAlign: TextAlign.center,
+                textAlign: TextAlign.center, style: _textStyle
               )),
               TableCell(
                   child: Padding(
@@ -58,14 +65,14 @@ class MoneyTransactionUiTable extends StatelessWidget {
                           top: SizeProvider.instance.size(8),
                           bottom: SizeProvider.instance.size(8)),
                       child: Text(DateFormat('MMM dd, y H:mm:s')
-                          .format(transaction.minted)))),
+                          .format(transaction.minted), style: _textStyle,))),
             ]),
             transaction.backedUp != null
                 ? TableRow(children: [
-                    const TableCell(
+                     TableCell(
                         child: Text(
                       "Backed Up",
-                      textAlign: TextAlign.center,
+                      textAlign: TextAlign.center, style: _textStyle
                     )),
                     TableCell(
                         child: Padding(
@@ -75,7 +82,7 @@ class MoneyTransactionUiTable extends StatelessWidget {
                                 bottom: SizeProvider.instance.size(8)),
                             child: Row(children: [
                               Text(DateFormat('MMM dd, y H:mm:s')
-                                  .format(transaction.backedUp!)),
+                                  .format(transaction.backedUp!), style: _textStyle),
                               Padding(
                                 padding: EdgeInsets.only(
                                     left: SizeProvider.instance.text(12)),
@@ -89,10 +96,10 @@ class MoneyTransactionUiTable extends StatelessWidget {
                   ]),
             transaction.listedOn != null
                 ? TableRow(children: [
-                    const TableCell(
+                     TableCell(
                         child: Text(
                       "Listed on",
-                      textAlign: TextAlign.center,
+                      textAlign: TextAlign.center, style: _textStyle
                     )),
                     TableCell(
                         child: Padding(
@@ -102,7 +109,7 @@ class MoneyTransactionUiTable extends StatelessWidget {
                                 bottom: SizeProvider.instance.size(8)),
                             child: Row(children: [
                               Text(DateFormat('MMM dd, y H:mm:s')
-                                  .format(transaction.listedOn!)),
+                                  .format(transaction.listedOn!), style: _textStyle),
                               Padding(
                                 padding: EdgeInsets.only(
                                     left: SizeProvider.instance.text(12)),
@@ -114,10 +121,10 @@ class MoneyTransactionUiTable extends StatelessWidget {
                     TableCell(child: Container())
                   ]),
             TableRow(children: [
-              const TableCell(
+              TableCell(
                   child: Text(
-                "Fingerprint)",
-                textAlign: TextAlign.center,
+                "Fingerprint",
+                textAlign: TextAlign.center, style: _textStyle
               )),
               TableCell(
                   child: Padding(
@@ -125,7 +132,7 @@ class MoneyTransactionUiTable extends StatelessWidget {
                           left: SizeProvider.instance.size(8),
                           top: SizeProvider.instance.size(8),
                           bottom: SizeProvider.instance.size(8)),
-                      child: Text(transaction.fingerprint))),
+                      child: Text(transaction.fingerprint, style: _textStyle))),
             ]),
           ],
         ));

@@ -29,7 +29,7 @@ start showing up in a couple weeks.
                 _title,
                 textAlign: TextAlign.start,
                 style: TextStyle(
-                    fontFamily: TextProvider.familyKoara,
+                    fontFamily: TextProvider.familyNunitoSans,
                     package: 'tiki_style',
                     color: ColorProvider.tikiBlue,
                     fontSize: SizeProvider.instance.text(18),

@@ -17,7 +17,7 @@ extension TransactionTypeExt on TransactionType{
   IconData get icon {
     switch(this){
       case TransactionType.subject:
-        return IconProvider.email_outline;
+        return IconProvider.email_solid;
       case TransactionType.zipcode:
         return IconProvider.location;
     }

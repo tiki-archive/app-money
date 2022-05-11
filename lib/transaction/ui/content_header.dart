@@ -25,14 +25,17 @@ class MoneyDetailViewHeader extends StatelessWidget {
                       child: Container(
                           padding:
                               EdgeInsets.only(left: SizeProvider.instance.size(25)),
-                          child: const Center(
-                              child: Icon(IconProvider.arrow_left, color: ColorProvider.greyTwo))))),
+                          child: Center(
+                              child: Icon(IconProvider.arrow_left, color: ColorProvider.greyThree, size: SizeProvider.instance.size(18)))))),
               Container(
                   alignment: Alignment.center,
                   child: Text("NFT ${transaction.id.substring(0, 10)}",
                       style: TextStyle(
+                          fontFamily: TextProvider.familyNunitoSans,
+                          package: "tiki_style",
                           color: ColorProvider.tikiBlue,
-                          fontSize: SizeProvider.instance.size(16)))),
+                          fontWeight: FontWeight.w600,
+                          fontSize: SizeProvider.instance.size(15)))),
               SizedBox.fromSize(
                   size: Size(SizeProvider.instance.size(40), SizeProvider.instance.size(40)))
             ]));

@@ -58,8 +58,8 @@ class _StatementBottomSheet extends State<StatementBottomSheet> {
                                   collapsed ?
                                     IconProvider.arrow_wide_up :
                                     IconProvider.arrow_wide_down,
-                                  color: ColorProvider.greyTwo,
-                                  size: SizeProvider.instance.text(20)
+                                  color: ColorProvider.greyThree,
+                                  size: SizeProvider.instance.text(10)
                               ))),
                       const StatementUiHeader(),
                       StatementList(
@@ -98,6 +98,6 @@ class _StatementBottomSheet extends State<StatementBottomSheet> {
   }
 
   double _calculateColapsedHeight(BuildContext context) {
-    return 350;
+    return MediaQuery.of(context).size.height - 450;
   }
 }

@@ -25,8 +25,9 @@ class StatementList extends StatelessWidget {
     return Opacity(
         opacity: example ? 0.5 : 1,
         child: Stack(children: [
-          example ? Align(child: ImgProvider.example) : Container(),
-          SizedBox(
+          example ? Align(alignment: Alignment.center,child: ImgProvider.example) : Container(),
+          Container(
+              padding: EdgeInsets.symmetric(horizontal: SizeProvider.instance.width(24)),
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               child: ListView.builder(

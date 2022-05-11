@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../../transaction/model/money_model_transaction.dart';
 
@@ -14,15 +15,25 @@ class ListDate extends StatelessWidget {
   Widget build(BuildContext context) {
     return previous == null
         ? Container(
-            padding: const EdgeInsets.only(left: 10, top: 10),
+            padding: const EdgeInsets.only(top: 10),
             width: double.infinity,
-            child: Text(_getDateString(current.minted).toUpperCase()))
+            child: Text(_getDateString(current.minted).toUpperCase(),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: SizeProvider.instance.text(15),
+                  fontFamily: TextProvider.familyNunitoSans,
+                  package: 'tiki_style'
+              )))
         : current.minted.day != previous!.minted.day
             ? Container(
-                padding: const EdgeInsets.only(left: 10, top: 10),
+                padding: const EdgeInsets.only(top: 10),
                 width: double.infinity,
                 child: Text(_getDateString(current.minted).toUpperCase(),
-                    textAlign: TextAlign.start))
+                    textAlign: TextAlign.start,style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: SizeProvider.instance.text(15),
+                        fontFamily: TextProvider.familyNunitoSans,
+                        package: 'tiki_style')))
             : Container();
   }
 

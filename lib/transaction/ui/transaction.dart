@@ -22,7 +22,7 @@ class MoneyTransactionItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                  width: SizeProvider.instance.size(60),
+                  width: SizeProvider.instance.size(50),
                   height: SizeProvider.instance.size(30),
                   child: Icon(transaction.type.icon,
                       size: SizeProvider.instance.size(23), color: ColorProvider.yellow)),
@@ -34,25 +34,42 @@ class MoneyTransactionItem extends StatelessWidget {
                     Row(children: [
                       Text(transaction.id.substring(0, 9),
                           style: TextStyle(
+                              fontFamily: TextProvider.familyNunitoSans,
+                              package: 'tiki_style',
+                              height:1.2,
                               color: ColorProvider.tikiBlue,
+                              fontWeight: FontWeight.w600,
                               fontSize: SizeProvider.instance.text(15))),
                       Padding(
                           padding:
                               EdgeInsets.only(left: SizeProvider.instance.size(5))),
                       transaction.listedOn != null
-                          ?  Icon(IconProvider.check,color: ColorProvider.green, size: SizeProvider.instance.text(12))
+                          ?  Icon(IconProvider.check_double,color: ColorProvider.green, size: SizeProvider.instance.text(12))
                           : transaction.backedUp != null
-                              ?  Icon(IconProvider.check_double,color: ColorProvider.green, size: SizeProvider.instance.text(12))
-                              : Container(),
+                            ?  Icon(IconProvider.check,color: ColorProvider.green, size: SizeProvider.instance.text(12))
+                            : Container(),
                     ]),
                     Text(transaction.type.asString(),
                         textAlign: TextAlign.start,
-                        style: const TextStyle(color: Colors.grey)),
+                        style: TextStyle(color: ColorProvider.greyFour,
+                          fontFamily: TextProvider.familyNunitoSans,
+                          fontWeight: FontWeight.w600,
+                          package: 'tiki_style',
+                          height:1.2,
+                          fontSize: SizeProvider.instance.text(12),
+
+                        )),
                   ])),
               Padding(
                   padding: EdgeInsets.only(right: SizeProvider.instance.size(7)),
                   child: Text("${transaction.ammount} ${transaction.unit}",
-                      style: TextStyle(fontSize: SizeProvider.instance.text(18)))),
+                      style: TextStyle(
+                          color: ColorProvider.tikiBlue,
+                          fontFamily: TextProvider.familyNunitoSans,
+                          package: 'tiki_style',
+                          fontWeight: FontWeight.w600,
+                          height:1.2,
+                          fontSize: SizeProvider.instance.text(18)))),
             ],
           )),
       onTap: () => service.controller.openDetail(context),

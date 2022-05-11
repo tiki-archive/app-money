@@ -19,11 +19,11 @@ class MoneyContainerUiCashOutIcon extends StatelessWidget {
         Stack(
           children: [
             Container(
-              width: 44,
-              height: 44,
+              width: SizeProvider.instance.width(44),
+              height: SizeProvider.instance.width(44),
               decoration: BoxDecoration(
                   color: ColorProvider.greyFour,
-                  borderRadius: BorderRadius.circular(SizeProvider.instance.size(30))),
+                  borderRadius: BorderRadius.circular(SizeProvider.instance.width(30))),
               child: const Center(
                   child: Icon(IconProvider.upload, color: ColorProvider.white),
             ))
