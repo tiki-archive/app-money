@@ -22,9 +22,9 @@ class MoneyContainerUiLayout extends StatelessWidget {
               padding: EdgeInsets.only(
                   top: SizeProvider.instance.size(8)),
               child: Column(children: [
-                MoneyContainerUiSoonCard(),
+                const MoneyContainerUiSoonCard(),
                 Padding(padding: EdgeInsets.only(top: SizeProvider.instance.size(20))),
-                MoneyContainerUiCashOut()
+                const MoneyContainerUiCashOut()
               ])),
           service.statement.presenter.bottomSheet(example:example)
         ]));

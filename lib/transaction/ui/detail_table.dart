@@ -29,7 +29,7 @@ class MoneyTransactionUiTable extends StatelessWidget {
         child: Table(
           columnWidths: <int, TableColumnWidth>{
             0: FixedColumnWidth(SizeProvider.instance.size(90)),
-            1:  FlexColumnWidth(),
+            1:  const FlexColumnWidth(),
           },
           defaultVerticalAlignment: TableCellVerticalAlignment.middle,
           border: TableBorder.symmetric(
