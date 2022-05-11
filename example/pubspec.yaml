@@ -29,7 +29,9 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  tiki_style: ^0.0.8
+  tiki_style:
+    path: ../../style
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -64,9 +66,9 @@ flutter:
   # https://flutter.dev/assets-and-images/#from-packages
 
   # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
+  # in this "flutter" section. Each entry in this statement should have a
   # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
+  # statement giving the asset and other descriptors for the font. For
   # example:
   # fonts:
   #   - family: Schyler

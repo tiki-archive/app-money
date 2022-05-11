@@ -1,17 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:httpp/httpp.dart';
-import 'package:tiki_style/tiki_style.dart';
 
-import 'src/money_service.dart';
+export 'transaction/model/money_model_transaction.dart';
+
+import 'container/service.dart';
+import 'transaction/model/money_model_transaction.dart' as transaction;
 
 class TikiMoney {
-  late final MoneyService _service;
+  late final ContainerService _service;
 
-  TikiMoney({Httpp? httpp, String? referalCode})
-      : _service = MoneyService(
+  TikiMoney({Httpp? httpp, required int referalCount,
+    List<transaction.TransactionModel> transactions = const []})
+      : _service = ContainerService(
             httpp: httpp ?? Httpp(),
-            referalCode: referalCode);
+            referalCount: referalCount) {
+    pushTransactions(transactions);
+  }
 
-  Widget home({bool example = false}) =>
+  Widget screen({bool example = false}) =>
       _service.presenter.home(example: example);
+
+  void pushTransactions(List<transaction.TransactionModel> transactions,
+      {bool overwrite = false}) =>
+        _service.statement.pushTransactions(transactions, overwrite: overwrite);
 }
