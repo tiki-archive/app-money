@@ -35,7 +35,7 @@ class _StatementBottomSheet extends State<StatementBottomSheet> {
     return AnimatedPositioned(
         curve: Curves.easeIn,
         duration: const Duration(milliseconds: 250),
-        top: collapsed ? SizeProvider.instance.size(350) : SizeProvider.instance.size(0),
+        top: collapsed ? _calculateColapsedHeight(context) : SizeProvider.instance.size(0),
         child: GestureDetector(
             onVerticalDragStart: _onVerticalDragUpdate,
             onVerticalDragEnd: _onVerticalDragEnd,
@@ -56,10 +56,10 @@ class _StatementBottomSheet extends State<StatementBottomSheet> {
                                   const EdgeInsets.only(top: 0, bottom: 35),
                               child: Icon(
                                   collapsed ?
-                                    IconProvider.arrow_thick_up :
-                                    IconProvider.arrow_thick_down,
-                                  color: ColorProvider.greyTwo,
-                                  size: SizeProvider.instance.text(20)
+                                    IconProvider.arrow_wide_up :
+                                    IconProvider.arrow_wide_down,
+                                  color: ColorProvider.greyThree,
+                                  size: SizeProvider.instance.text(10)
                               ))),
                       const StatementUiHeader(),
                       StatementList(
@@ -95,5 +95,9 @@ class _StatementBottomSheet extends State<StatementBottomSheet> {
     if (_scrollController.offset <= 1 &&
         !_scrollController.position.outOfRange &&
         !collapsed) _collapse();
+  }
+
+  double _calculateColapsedHeight(BuildContext context) {
+    return MediaQuery.of(context).size.height - 450;
   }
 }

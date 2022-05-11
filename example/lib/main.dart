@@ -52,12 +52,12 @@ List<TransactionModel> _getTransactions() {
     DateTime minted = lastDate.subtract(Duration(
         seconds: index * Random().nextInt(Duration.secondsPerDay ~/ 8)));
     lastDate = minted;
-    DateTime? backed = index > 3
+    DateTime? listed = index > 3
         ? minted.add(Duration(
         seconds: index * Random().nextInt(Duration.secondsPerHour)))
         : null;
-    DateTime? listed = index > 7
-        ? backed?.add(Duration(
+    DateTime? backed = index > 7
+        ? listed?.add(Duration(
         seconds: index * Random().nextInt(Duration.secondsPerHour)))
         : null;
     return TransactionModel(

@@ -18,21 +18,18 @@ class MoneyTransactionUiDetail extends StatelessWidget {
     TransactionService service = Provider.of<TransactionService>(context);
     TransactionModel transaction = service.transaction;
     return SizedBox(
-        height: MediaQuery.of(context).size.height * 0.85,
+        height: MediaQuery.of(context).size.height - SizeProvider.instance.height(180),
         child: Column(mainAxisSize: MainAxisSize.min, children: [
           MoneyDetailViewHeader(transaction: transaction),
           Expanded(
               child: Padding(
                   padding: EdgeInsets.only(
-                      left: SizeProvider.instance.size(25),
-                      right: SizeProvider.instance.size(25),
+                      left: SizeProvider.instance.size(40),
+                      right: SizeProvider.instance.size(40),
                       bottom: SizeProvider.instance.size(16)),
                   child: Column(children: [
                     MoneyTransactionUiHeader(transaction: transaction),
-                    Expanded(
-                        child: Center(
-                            child: MoneyTransactionUiTable(
-                                transaction: transaction)))
+                    MoneyTransactionUiTable(transaction: transaction)
                   ])))
         ]));
   }

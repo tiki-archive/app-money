@@ -28,10 +28,10 @@ class MoneyContainerUiAmount extends StatelessWidget {
             style: TextStyle(
                 color: ColorProvider.tikiBlue,
                 fontFamily: TextProvider.familyKoara,
-                package: 'style',
+                package: 'tiki_style',
                 fontWeight: FontWeight.bold,
                 height: 0,
-                fontSize: SizeProvider.instance.text(64)),
+                fontSize: SizeProvider.instance.text(80)),
           ),
           Container(
               margin: EdgeInsets.only(top: SizeProvider.instance.size(16)),
@@ -41,9 +41,9 @@ class MoneyContainerUiAmount extends StatelessWidget {
                 style: TextStyle(
                     color: const Color(0xFF545454),
                     fontFamily: TextProvider.familyKoara,
-                    package: 'style',
+                    package: 'tiki_style',
                     fontWeight: FontWeight.bold,
-                    fontSize: SizeProvider.instance.text(12)),
+                    fontSize: SizeProvider.instance.text(16)),
               ))
         ]);
   }

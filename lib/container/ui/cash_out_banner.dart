@@ -15,18 +15,20 @@ class MoneyContainerUiCashOutBanner extends StatelessWidget {
     return Stack(
       children: [
         SizedBox(
-          child: ImgProvider.walletBanner,
-          height: SizeProvider.instance.size(25),
+          child: ImgProvider.bannerCyan,
+          height: SizeProvider.instance.size(30),
         ),
         Container(
             margin: EdgeInsets.symmetric(
-                vertical: SizeProvider.instance.size(6),
+                vertical: SizeProvider.instance.size(4),
                 horizontal: SizeProvider.instance.size(12)),
             child: Text(
               _text,
               style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: SizeProvider.instance.text(12),
+                  fontFamily: TextProvider.familyNunitoSans,
+                  package: 'tiki_style',
+                  fontSize: SizeProvider.instance.text(16),
                   color: ColorProvider.tikiBlue),
             ))
       ],
