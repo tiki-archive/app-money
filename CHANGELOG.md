@@ -1,3 +1,7 @@
+## 0.0.11
+
+* fixed infinite loop bug
+
 ## 0.0.10
 
 * localgraph integration

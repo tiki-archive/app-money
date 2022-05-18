@@ -33,8 +33,9 @@ class NFTHistoryService extends ChangeNotifier {
 
   Future<void> load() async {
     List<NFTDetailModel> loaded = await _lookup();
-    if (model.nfts.isEmpty ||
-        loaded.elementAt(0).hash != model.nfts.elementAt(0).hash) {
+    if (loaded.isNotEmpty &&
+        (model.nfts.isEmpty ||
+            loaded.elementAt(0).hash != model.nfts.elementAt(0).hash)) {
       model.nfts = loaded;
       notifyListeners();
     }
