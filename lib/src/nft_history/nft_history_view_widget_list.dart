@@ -17,7 +17,7 @@ class NFTHistoryViewWidgetList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     NFTHistoryService service = Provider.of<NFTHistoryService>(context);
-    service.load();
+    if(service.model.nfts.isEmpty) service.load();
     return Container(
         color: Colors.white,
         padding:
@@ -26,11 +26,13 @@ class NFTHistoryViewWidgetList extends StatelessWidget {
             ? ListView.builder(
                 controller: service.controller.scrollController,
                 itemCount: service.model.nfts.length,
-                itemBuilder: (BuildContext context, int index) =>
-                    NFTHistoryViewWidgetItem(
-                        current: service.model.nfts[index],
-                        previous:
-                            index > 0 ? service.model.nfts[index - 1] : null))
+                itemBuilder: (BuildContext context, int index) {
+                  if (index == service.model.nfts.length - 50) service.nextPage();
+                  return NFTHistoryViewWidgetItem(
+                      current: service.model.nfts[index],
+                      previous:
+                      index > 0 ? service.model.nfts[index - 1] : null);
+                })
             : const Center(
                 child: CircularProgressIndicator(color: ColorProvider.blue)));
   }
