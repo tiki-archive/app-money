@@ -26,8 +26,7 @@ class NFTHistoryViewLayout extends StatelessWidget {
         left: 0,
         right: 0,
         top: isCollapsed
-            ? MediaQuery.of(context).size.height -
-                SizeProvider.instance.height(350)
+            ? MediaQuery.of(context).size.height * .50
             : SizeProvider.instance.height(0),
         child: GestureDetector(
             onVerticalDragEnd: service.controller.onVerticalDragEnd,
