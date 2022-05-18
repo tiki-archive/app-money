@@ -1,3 +1,10 @@
+## 0.0.10
+
+* localgraph integration
+* tiki chain integration 
+* display the user's NFTs
+* page thru user's NFTs
+
 ## 0.0.9
 
 * update design
