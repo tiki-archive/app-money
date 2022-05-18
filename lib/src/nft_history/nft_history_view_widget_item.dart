@@ -7,33 +7,34 @@ import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-import '../dnft/dnft_model.dart';
-import '../dnft/dnft_model_type.dart';
-import 'dnft_list_service.dart';
-import 'dnft_list_view_widget_date.dart';
+import '../nft_detail/nft_detail_model.dart';
+import '../nft_detail/nft_detail_model_type.dart';
+import 'nft_history_service.dart';
+import 'nft_history_view_widget_date.dart';
 
-class DNFTListViewWidgetItem extends StatelessWidget {
-  final DNFTModel current;
-  final DNFTModel? previous;
+class NFTHistoryViewWidgetItem extends StatelessWidget {
+  final NFTDetailModel current;
+  final NFTDetailModel? previous;
 
-  const DNFTListViewWidgetItem({Key? key, required this.current, this.previous})
+  const NFTHistoryViewWidgetItem(
+      {Key? key, required this.current, this.previous})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      DNFTListViewWidgetDate(
+      NFTHistoryViewWidgetDate(
           current: current.minted, previous: previous?.minted),
       GestureDetector(
         child: Padding(
-            padding:
-                EdgeInsets.symmetric(vertical: SizeProvider.instance.size(10)),
+            padding: EdgeInsets.symmetric(
+                vertical: SizeProvider.instance.height(10)),
             child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
               SizedBox(
-                  width: SizeProvider.instance.size(50),
-                  height: SizeProvider.instance.size(30),
-                  child: Icon(current.type.icon,
-                      size: SizeProvider.instance.size(23),
+                  width: SizeProvider.instance.width(50),
+                  height: SizeProvider.instance.height(30),
+                  child: Icon(current.type?.icon,
+                      size: SizeProvider.instance.text(23),
                       color: ColorProvider.yellow)),
               Expanded(
                   child: Column(
@@ -41,7 +42,7 @@ class DNFTListViewWidgetItem extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                     Row(children: [
-                      Text(current.id.substring(0, 9),
+                      Text(current.hash?.substring(0, 9) ?? '',
                           style: TextStyle(
                               fontFamily: TextProvider.familyNunitoSans,
                               package: TextProvider.package,
@@ -51,18 +52,18 @@ class DNFTListViewWidgetItem extends StatelessWidget {
                               fontSize: SizeProvider.instance.text(15))),
                       Padding(
                           padding: EdgeInsets.only(
-                              left: SizeProvider.instance.size(5))),
-                      current.listedOn != null
+                              left: SizeProvider.instance.width(5))),
+                      current.listed != null
                           ? Icon(IconProvider.check_double,
                               color: ColorProvider.green,
                               size: SizeProvider.instance.text(12))
-                          : current.backedUp != null
+                          : current.synced != null
                               ? Icon(IconProvider.check,
                                   color: ColorProvider.green,
                                   size: SizeProvider.instance.text(12))
                               : Container()
                     ]),
-                    Text(current.type.asString(),
+                    Text(current.type?.pretty() ?? '',
                         textAlign: TextAlign.start,
                         style: TextStyle(
                           color: ColorProvider.greyFour,
@@ -76,7 +77,7 @@ class DNFTListViewWidgetItem extends StatelessWidget {
               Padding(
                   padding:
                       EdgeInsets.only(right: SizeProvider.instance.size(7)),
-                  child: Text("${current.amount} ${current.unit}",
+                  child: Text(current.amount,
                       style: TextStyle(
                           color: ColorProvider.tikiBlue,
                           fontFamily: TextProvider.familyNunitoSans,
@@ -85,7 +86,7 @@ class DNFTListViewWidgetItem extends StatelessWidget {
                           height: 1.2,
                           fontSize: SizeProvider.instance.text(18))))
             ])),
-        onTap: () => Provider.of<DNFTListService>(context, listen: false)
+        onTap: () => Provider.of<NFTHistoryService>(context, listen: false)
             .controller
             .openDetail(context, current),
         behavior: HitTestBehavior.opaque,

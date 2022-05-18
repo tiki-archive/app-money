@@ -4,29 +4,27 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:httpp/httpp.dart';
+import 'package:tiki_localgraph/tiki_localgraph.dart';
+import 'package:tiki_wallet/tiki_wallet.dart';
 
-import 'dnft/dnft_model.dart';
-import 'screen/screen_service.dart';
+import 'src/card/card_service.dart';
+import 'src/nft_history/nft_history_service.dart';
+import 'src/screen/screen_service.dart';
 
-export 'dnft/dnft_model.dart';
-export 'dnft/dnft_model_type.dart';
+export 'src/nft_detail/nft_detail_model.dart';
+export 'src/nft_detail/nft_detail_model_type.dart';
 
 class TikiMoney {
   late final ScreenService _screenService;
 
   TikiMoney(
-      {Httpp? httpp,
-      int referralCount = 0,
-      List<DNFTModel> nfts = const [],
-      bool example = false})
-      : _screenService =
-            ScreenService(referralCount: referralCount, example: example) {
-    pushTransactions(nfts);
+      {required TikiLocalGraph localGraph,
+      required TikiChainService chainService,
+      int referralCount = 0}) {
+    _screenService = ScreenService(
+        card: CardService(referralCount: referralCount),
+        history: NFTHistoryService(localGraph, chainService));
   }
 
   Widget get screen => _screenService.presenter.screen;
-
-  void pushTransactions(List<DNFTModel> nfts, {bool overwrite = false}) =>
-      _screenService.listService.pushTransactions(nfts, overwrite: overwrite);
 }

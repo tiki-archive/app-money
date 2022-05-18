@@ -6,16 +6,17 @@
 import 'package:flutter/material.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-class DNFTListViewWidgetHeader extends StatelessWidget {
-  final String _title = "Data NFTs are on the way!";
+class NFTHistoryViewExplain extends StatelessWidget {
+  final String _title = "Data NFTs are here !!!";
   final String _text = '''
-We have a few technical i’s to dot and t’s 
-to cross but the core tech is in your app. 
-Keep your 👀 peeled, your data NFTs will 
-start showing up in a couple weeks.
+These are very much in beta-beta. 
+This is to test for bugs, do not panic
+if they don't work right or disappear.
+They will all be replaced once the 
+bugs are squashed.
 ''';
 
-  const DNFTListViewWidgetHeader({Key? key}) : super(key: key);
+  const NFTHistoryViewExplain({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

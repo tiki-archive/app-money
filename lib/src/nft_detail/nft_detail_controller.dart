@@ -5,12 +5,12 @@
 
 import 'package:flutter/cupertino.dart';
 
-import 'dnft_service.dart';
+import 'nft_detail_service.dart';
 
-class DNFTController {
-  final DNFTService _service;
+class NFTDetailController {
+  final NFTDetailService _service;
 
-  DNFTController(this._service);
+  NFTDetailController(this._service);
 
   void back(BuildContext context) => Navigator.of(context).pop();
 }
